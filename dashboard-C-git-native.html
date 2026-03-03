@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Synapse Dashboard — C) Git-native</title>
+  <style>
+    :root{
+      --bg:#0d1117;
+      --panel:#161b22;
+      --text:#c9d1d9;
+      --muted:#8b949e;
+      --border:#30363d;
+      --accent:#58a6ff;
+      --ok:#3fb950;
+      --warn:#d29922;
+      --fail:#f85149;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:var(--mono)}
+    a{color:var(--accent);text-decoration:none}
+    .topbar{display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--border);background:rgba(13,17,23,.9);position:sticky;top:0}
+    .brand{font-weight:700;color:var(--text)}
+    .path{color:var(--muted)}
+    .spacer{flex:1}
+    .btn{border:1px solid var(--border);color:var(--text);padding:6px 10px;border-radius:8px}
+    main{max-width:1100px;margin:0 auto;padding:16px}
+    .grid{display:grid;grid-template-columns: 1fr 360px;gap:16px}
+    .card{border:1px solid var(--border);background:var(--panel);border-radius:10px;padding:12px}
+    .h{color:var(--muted);margin:0 0 10px;font-size:12px}
+    .kv{display:grid;grid-template-columns: 140px 1fr;gap:8px;font-size:12px}
+    .kv div:nth-child(odd){color:var(--muted)}
+    .tag{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:2px 8px;font-size:12px;color:var(--muted)}
+    .ok{color:var(--ok)}.warn{color:var(--warn)}.fail{color:var(--fail)}
+    pre{margin:0;white-space:pre-wrap;line-height:1.45;font-size:12px;color:var(--text)}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">synapse</div>
+    <div class="path">/ projects / synapse / dashboard</div>
+    <div class="spacer"></div>
+    <a class="btn" href="#">board</a>
+    <a class="btn" href="#">sync</a>
+    <a class="btn" href="#">settings</a>
+  </header>
+
+  <main>
+    <div class="grid">
+      <section style="display:grid;gap:16px">
+        <div class="card">
+          <p class="h">sync_status()</p>
+          <div class="kv">
+            <div>last_ok</div><div><span class="ok">05:20</span></div>
+            <div>fails_24h</div><div><span class="fail">2</span></div>
+            <div>pending</div><div><span class="warn">4</span></div>
+            <div>polling</div><div>enabled</div>
+            <div>delete_policy</div><div>propagate</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <p class="h">recent_events[]</p>
+          <pre>
+- 05:21  github.webhook  issue.edit     syn-101  <span class="ok">ok</span>
+- 05:22  linear.webhook  issue.edit     syn-130  <span class="fail">fail(auth)</span>
+- 05:24  github.poll     delta-sync     repo kwonlabs/synapse  <span class="ok">ok</span>
+          </pre>
+        </div>
+
+        <div class="card">
+          <p class="h">links</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span class="tag">workers</span>
+            <span class="tag">d1</span>
+            <span class="tag">sync/managed</span>
+          </div>
+        </div>
+      </section>
+
+      <aside style="display:grid;gap:16px">
+        <div class="card">
+          <p class="h">integrations</p>
+          <pre>
+- github_app: installed
+- linked_repo: kwonlabs/synapse
+- linear: api_key + webhook
+          </pre>
+        </div>
+        <div class="card">
+          <p class="h">alerts</p>
+          <pre>
+- <span class="fail">fail</span> linear_auth_failed        (retry)
+- <span class="warn">warn</span> relationship_conflict     (view)
+          </pre>
+        </div>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>

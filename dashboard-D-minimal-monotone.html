@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Synapse Dashboard — D) Minimal Monotone (emoji-free)</title>
+  <style>
+    :root{
+      --bg:#ffffff;
+      --panel:#ffffff;
+      --text:#111111;
+      --muted:#6b6b6b;
+      --border:#e8e8e8;
+      --border2:#d9d9d9;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans)}
+    .topbar{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--border)}
+    .brand{font-weight:700}
+    .spacer{flex:1}
+    .btn{border:1px solid var(--border2);background:#fff;color:var(--text);padding:7px 10px;border-radius:10px;font-size:13px;text-decoration:none}
+    main{max-width:1100px;margin:0 auto;padding:18px}
+    .grid{display:grid;grid-template-columns: 1fr 360px;gap:16px}
+    .card{border:1px solid var(--border);border-radius:14px;padding:14px;background:var(--panel)}
+    h1{margin:0;font-size:16px}
+    .sub{margin-top:6px;color:var(--muted);font-size:13px}
+    .kpis{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;font-family:var(--mono)}
+    .kpi{border:1px solid var(--border);border-radius:12px;padding:10px 12px;min-width:170px}
+    .k{font-size:11px;color:var(--muted);margin-bottom:6px}
+    .v{font-size:16px}
+
+    .line{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0;border-top:1px solid var(--border)}
+    .line:first-child{border-top:none}
+    .sig{font-family:var(--mono);font-size:12px;padding:2px 6px;border:1px solid var(--border);border-radius:8px;color:var(--muted)}
+    .sig.ok{color:#111}
+    .sig.warn{color:#111}
+    .sig.fail{color:#111}
+    .meta{font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+    .side .card{position:sticky;top:70px}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Synapse</div>
+    <div class="meta">Project: Synapse</div>
+    <div class="spacer"></div>
+    <a class="btn" href="#">Board</a>
+    <a class="btn" href="#">Sync</a>
+    <a class="btn" href="#">Integrations</a>
+  </header>
+
+  <main>
+    <div class="grid">
+      <section style="display:grid;gap:16px">
+        <div class="card">
+          <h1>Dashboard</h1>
+          <div class="sub">Monotone. Emoji-free. Minimal symbols only.</div>
+          <div class="kpis">
+            <div class="kpi"><div class="k">ok (last_ok)</div><div class="v">✓ 05:20</div></div>
+            <div class="kpi"><div class="k">warn (pending)</div><div class="v">! 4</div></div>
+            <div class="kpi"><div class="k">fail (24h)</div><div class="v">× 2</div></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h1 style="font-size:14px">Events</h1>
+          <div class="line">
+            <div>
+              <span class="sig ok">✓</span>
+              <span class="meta">05:21 github.webhook issue.edit syn-101</span>
+            </div>
+            <a class="btn" href="#" style="padding:5px 8px">View</a>
+          </div>
+          <div class="line">
+            <div>
+              <span class="sig fail">×</span>
+              <span class="meta">05:22 linear.webhook issue.edit syn-130 fail(auth)</span>
+            </div>
+            <div style="display:flex;gap:8px">
+              <a class="btn" href="#" style="padding:5px 8px">Retry</a>
+              <a class="btn" href="#" style="padding:5px 8px">View</a>
+            </div>
+          </div>
+          <div class="line">
+            <div>
+              <span class="sig ok">✓</span>
+              <span class="meta">05:24 github.poll delta-sync repo kwonlabs/synapse</span>
+            </div>
+            <a class="btn" href="#" style="padding:5px 8px">View</a>
+          </div>
+        </div>
+      </section>
+
+      <aside class="side">
+        <div class="card">
+          <h1 style="font-size:14px">Setup</h1>
+          <div class="meta" style="display:grid;gap:8px;margin-top:10px">
+            <div>github_app: installed</div>
+            <div>linked_repo: kwonlabs/synapse</div>
+            <div>linear: api_key + webhook</div>
+            <div>polling: enabled</div>
+            <div>delete: propagate</div>
+          </div>
+          <div style="display:flex;gap:10px;margin-top:12px">
+            <a class="btn" href="#" style="flex:1;text-align:center">Sync Status</a>
+            <a class="btn" href="#" style="flex:1;text-align:center">Run Polling</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>

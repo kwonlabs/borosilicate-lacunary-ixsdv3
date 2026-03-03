@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Synapse Dashboard Design Mocks</title>
+  <style>
+    :root{--bg:#fff;--text:#111;--muted:#666;--border:#e8e8e8;--sans:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans)}
+    main{max-width:820px;margin:0 auto;padding:28px}
+    h1{margin:0 0 10px;font-size:18px}
+    p{margin:0 0 18px;color:var(--muted);font-size:13px;line-height:1.5}
+    .list{border:1px solid var(--border);border-radius:14px;overflow:hidden}
+    a{display:flex;justify-content:space-between;gap:12px;padding:14px 16px;text-decoration:none;color:inherit;border-top:1px solid var(--border)}
+    a:first-child{border-top:none}
+    .name{font-weight:600}
+    .desc{color:var(--muted);font-size:13px}
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Synapse Dashboard — HTML mocks</h1>
+    <p>대시보드 첫 페이지만 4가지 스타일(A/B/C/D)로 만든 임시 미리보기입니다.</p>
+
+    <div class="list">
+      <a href="./dashboard-A-ops-console.html">
+        <div>
+          <div class="name">A) Ops Console</div>
+          <div class="desc">운영 콘솔: 상태/복구 중심</div>
+        </div>
+        <div class="desc">open →</div>
+      </a>
+
+      <a href="./dashboard-B-calm-productivity.html">
+        <div>
+          <div class="name">B) Calm Productivity</div>
+          <div class="desc">차분한 생산성: Linear/Notion 계열</div>
+        </div>
+        <div class="desc">open →</div>
+      </a>
+
+      <a href="./dashboard-C-git-native.html">
+        <div>
+          <div class="name">C) Git-native</div>
+          <div class="desc">개발자 친화: 텍스트/로그/링크 중심</div>
+        </div>
+        <div class="desc">open →</div>
+      </a>
+
+      <a href="./dashboard-D-minimal-monotone.html">
+        <div>
+          <div class="name">D) Minimal Monotone (emoji-free)</div>
+          <div class="desc">모노톤/미니멀: 최소 기호/아이콘</div>
+        </div>
+        <div class="desc">open →</div>
+      </a>
+    </div>
+  </main>
+</body>
+</html>

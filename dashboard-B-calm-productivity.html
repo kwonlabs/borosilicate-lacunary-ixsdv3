@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Synapse Dashboard — B) Calm Productivity</title>
+  <style>
+    :root{
+      --bg:#f7f7f8;
+      --panel:#ffffff;
+      --text:#111827;
+      --muted:#6b7280;
+      --border:#e5e7eb;
+      --accent:#2563eb;
+      --ok:#16a34a;
+      --warn:#d97706;
+      --fail:#dc2626;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans)}
+    a{color:inherit}
+    .topbar{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--border);background:rgba(255,255,255,.85);backdrop-filter: blur(10px);position:sticky;top:0}
+    .brand{font-weight:700}
+    .crumb{color:var(--muted);font-size:13px}
+    .spacer{flex:1}
+    .btn{border:1px solid var(--border);background:#fff;padding:8px 10px;border-radius:10px;font-size:13px;text-decoration:none}
+    .btn.primary{border-color:rgba(37,99,235,.3);background:rgba(37,99,235,.08)}
+    main{max-width:1100px;margin:0 auto;padding:18px}
+    .grid{display:grid;grid-template-columns: 1fr 360px;gap:16px}
+    .card{border:1px solid var(--border);background:var(--panel);border-radius:14px;padding:14px}
+    .title{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+    h1{margin:0;font-size:18px}
+    .sub{color:var(--muted);font-size:13px}
+    .kpis{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .kpi{border:1px solid var(--border);border-radius:12px;padding:10px 12px;min-width:150px}
+    .kpi .k{font-size:12px;color:var(--muted);margin-bottom:6px}
+    .kpi .v{font-family:var(--mono);font-size:16px}
+
+    .list{margin:0;padding:0;list-style:none}
+    .item{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-top:1px solid var(--border)}
+    .item:first-child{border-top:none}
+    .dot{width:10px;height:10px;border-radius:50%;margin-top:3px}
+    .dot.ok{background:var(--ok)}
+    .dot.fail{background:var(--fail)}
+    .meta{font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+    .side .card{position:sticky;top:70px}
+    .tag{display:inline-flex;align-items:center;padding:4px 8px;border:1px solid var(--border);border-radius:999px;font-size:12px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Synapse</div>
+    <div class="crumb">/ Projects / Synapse</div>
+    <div class="spacer"></div>
+    <a class="btn primary" href="#">Board</a>
+    <a class="btn" href="#">Sync</a>
+    <a class="btn" href="#">Settings</a>
+  </header>
+
+  <main>
+    <div class="grid">
+      <section style="display:grid;gap:16px">
+        <div class="card">
+          <div class="title">
+            <h1>Project: Synapse</h1>
+            <span class="tag">workers + d1</span>
+          </div>
+          <div class="sub">운영자가 매일 보는 요약. 과한 경고색 없이, 필요한 정보만.</div>
+          <div class="kpis">
+            <div class="kpi"><div class="k">Last OK</div><div class="v">05:20</div></div>
+            <div class="kpi"><div class="k">Fails (24h)</div><div class="v">2</div></div>
+            <div class="kpi"><div class="k">Pending</div><div class="v">4</div></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="title"><h1 style="font-size:14px;margin:0">Recent</h1><span class="sub">events</span></div>
+          <ul class="list">
+            <li class="item">
+              <span class="dot ok"></span>
+              <div>
+                <div>GitHub #123 → Linear PRD-88 <span class="meta">(synced)</span></div>
+                <div class="meta">issue.edit · 05:21</div>
+              </div>
+            </li>
+            <li class="item">
+              <span class="dot fail"></span>
+              <div>
+                <div>Linear PRD-90 → GitHub #130 <span class="meta">(fail: auth)</span></div>
+                <div class="meta">issue.edit · 05:22</div>
+              </div>
+            </li>
+            <li class="item">
+              <span class="dot ok"></span>
+              <div>
+                <div>Polling delta sync <span class="meta">kwonlabs/synapse</span></div>
+                <div class="meta">delta-sync · 05:24</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <aside class="side">
+        <div class="card">
+          <h1 style="font-size:14px;margin:0 0 10px">Quick setup status</h1>
+          <div class="meta" style="display:grid;gap:8px">
+            <div>Repo: connected</div>
+            <div>Linear: key + webhook</div>
+            <div>Polling: enabled</div>
+            <div>Delete policy: propagate</div>
+          </div>
+          <div style="display:flex;gap:10px;margin-top:12px">
+            <a class="btn" href="#" style="flex:1;text-align:center">Sync Status</a>
+            <a class="btn" href="#" style="flex:1;text-align:center">Run Polling</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>
