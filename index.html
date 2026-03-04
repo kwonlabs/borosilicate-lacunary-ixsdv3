@@ -15,20 +15,24 @@
   <header class="topbar" role="banner">
     <nav class="wrap" aria-label="Toolbar">
       <select id="variant" aria-label="Select theme">
-        <option value="0">0) Base only</option>
-        <option value="A">A) Ops Console</option>
+        <option value="Z" selected>No CSS</option>
+        <option value="0">Base only</option>
+
+        <option value="D">D) Minimal Monotone</option>
         <option value="B">B) Calm Productivity</option>
+        <option value="A">A) Ops Console</option>
         <option value="C">C) Git-native</option>
-        <option value="D" selected>D) Minimal Monotone</option>
-        <option value="E">E) Bootstrap</option>
+
         <option value="F">F) shadcn</option>
-        <option value="G">G) Skeuomorphism</option>
+        <option value="E">E) Bootstrap</option>
+
         <option value="H">H) Glassmorphism</option>
         <option value="I">I) Neumorphism</option>
         <option value="J">J) Neo-brutal</option>
+
         <option value="K">K) Cyberpunk</option>
         <option value="L">L) Ecopunk</option>
-        <option value="Z">Z) No CSS</option>
+        <option value="G">G) Skeuomorphism</option>
       </select>
       <div class="spacer"></div>
       <a class="btn" href="#">Board</a>
@@ -142,7 +146,8 @@
 
       sel.addEventListener('change', () => setTheme(sel.value));
 
-      setTheme(new URL(window.location.href).searchParams.get('t') || 'D');
+      // Default start: No CSS baseline. Use ?t=... to jump directly.
+      setTheme(new URL(window.location.href).searchParams.get('t') || 'Z');
     </script>
   </main>
 
