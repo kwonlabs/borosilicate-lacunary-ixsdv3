@@ -28,7 +28,7 @@
         <option value="J">J) Neo-brutal</option>
         <option value="K">K) Cyberpunk</option>
         <option value="L">L) Ecopunk</option>
-        <option value="Z">Z) Naked (no CSS)</option>
+        <option value="Z">Z) No CSS</option>
       </select>
       <div class="spacer"></div>
       <a class="btn" href="#">Board</a>
@@ -101,25 +101,30 @@
         J: './themes/J-neobrutal.css',
         K: './themes/K-cyberpunk.css',
         L: './themes/L-ecopunk.css',
-        Z: 'naked.html',
+        Z: 'NOCSS',
       };
 
       const sel = document.getElementById('variant');
       const link = document.getElementById('theme');
 
       function setTheme(v){
-        if (v === 'Z') {
-          window.location.href = './naked.html';
-          return;
-        }
-
         const href = (v in themeMap) ? themeMap[v] : themeMap.D;
-        if (href) {
-          link.disabled = false;
-          link.setAttribute('href', href);
+        if (v === 'Z') {
+          // no CSS at all
+          document.querySelectorAll('link[rel="stylesheet"]').forEach((l) => (l.disabled = true));
         } else {
-          // base only
-          link.disabled = true;
+          // ensure base is enabled
+          document
+            .querySelectorAll('link[rel="stylesheet"]')
+            .forEach((l) => (l.disabled = false));
+
+          if (href) {
+            link.disabled = false;
+            link.setAttribute('href', href);
+          } else {
+            // base only
+            link.disabled = true;
+          }
         }
 
         sel.value = v;
