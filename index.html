@@ -15,24 +15,20 @@
   <header class="topbar" role="banner">
     <nav class="wrap" aria-label="Toolbar">
       <select id="variant" aria-label="Select theme">
-        <option value="Z" selected>No CSS</option>
-        <option value="0">Base only</option>
-
-        <option value="D">D) Minimal Monotone</option>
-        <option value="B">B) Calm Productivity</option>
-        <option value="A">A) Ops Console</option>
-        <option value="C">C) Git-native</option>
-
-        <option value="F">F) shadcn</option>
-        <option value="E">E) Bootstrap</option>
-
-        <option value="H">H) Glassmorphism</option>
-        <option value="I">I) Neumorphism</option>
-        <option value="J">J) Neo-brutal</option>
-
-        <option value="K">K) Cyberpunk</option>
-        <option value="L">L) Ecopunk</option>
-        <option value="G">G) Skeuomorphism</option>
+        <option value="Z" selected>00 No CSS</option>
+        <option value="0">01 Base only</option>
+        <option value="D">02 Minimal Monotone</option>
+        <option value="B">03 Calm Productivity</option>
+        <option value="A">04 Ops Console</option>
+        <option value="C">05 Git-native</option>
+        <option value="F">06 shadcn</option>
+        <option value="E">07 Bootstrap</option>
+        <option value="H">08 Glassmorphism</option>
+        <option value="I">09 Neumorphism</option>
+        <option value="J">10 Neo-brutal</option>
+        <option value="K">11 Cyberpunk</option>
+        <option value="L">12 Ecopunk</option>
+        <option value="G">13 Skeuomorphism</option>
       </select>
       <div class="spacer"></div>
       <a class="btn" href="#">Board</a>
@@ -115,6 +111,23 @@
         Z: 'NOCSS',
       };
 
+      const labels = {
+        Z: '00 No CSS',
+        0: '01 Base only',
+        D: '02 Minimal Monotone',
+        B: '03 Calm Productivity',
+        A: '04 Ops Console',
+        C: '05 Git-native',
+        F: '06 shadcn',
+        E: '07 Bootstrap',
+        H: '08 Glassmorphism',
+        I: '09 Neumorphism',
+        J: '10 Neo-brutal',
+        K: '11 Cyberpunk',
+        L: '12 Ecopunk',
+        G: '13 Skeuomorphism',
+      };
+
       const sel = document.getElementById('variant');
       const link = document.getElementById('theme');
 
@@ -139,6 +152,11 @@
         }
 
         sel.value = v;
+
+        // Update title line to numeric label (no alpha)
+        const titleEl = document.querySelector('.title');
+        if (titleEl && labels[v]) titleEl.textContent = `Dashboard (${labels[v]})`;
+
         const url = new URL(window.location.href);
         url.searchParams.set('t', v);
         history.replaceState({}, '', url);
