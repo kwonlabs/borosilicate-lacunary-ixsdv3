@@ -57,7 +57,17 @@
 <body>
   <header class="topbar">
     <div class="brand">Synapse</div>
-    <div class="crumb">/ Projects / Synapse</div>
+
+    <label class="crumb" style="display:flex;align-items:center;gap:8px">
+      Project
+      <select id="variant" style="font-size:13px;padding:8px 10px;border:1px solid var(--border);border-radius:999px;background:#fff">
+        <option value="A">A) Ops Console</option>
+        <option value="B" selected>B) Calm Productivity</option>
+        <option value="C">C) Git-native</option>
+        <option value="D">D) Minimal Monotone</option>
+      </select>
+    </label>
+
     <div class="spacer"></div>
     <a class="btn primary" href="#">Board</a>
     <a class="btn" href="#">Sync</a>
@@ -65,6 +75,19 @@
   </header>
 
   <main>
+    <script>
+      document.getElementById('variant')?.addEventListener('change', (e) => {
+        const v = e.target.value;
+        const map = {
+          A: './dashboard-A-ops-console.html',
+          B: './dashboard-B-calm-productivity.html',
+          C: './dashboard-C-git-native.html',
+          D: './dashboard-D-minimal-monotone.html',
+        };
+        window.location.href = map[v] || map.B;
+      });
+    </script>
+
     <div class="grid">
       <section style="display:grid;gap:16px">
         <div class="card">

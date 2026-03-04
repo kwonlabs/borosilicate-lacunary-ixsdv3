@@ -51,7 +51,17 @@
 <body>
   <header class="topbar">
     <div class="brand">Synapse</div>
-    <div class="meta">Project: Synapse</div>
+
+    <label class="meta" style="display:flex;align-items:center;gap:8px">
+      Project
+      <select id="variant" aria-label="Select variant" style="font-size:13px;padding:8px 10px;border:1px solid var(--hair);border-radius:999px;background:#fff">
+        <option value="A">A) Ops Console</option>
+        <option value="B">B) Calm Productivity</option>
+        <option value="C">C) Git-native</option>
+        <option value="D" selected>D) Minimal Monotone</option>
+      </select>
+    </label>
+
     <div class="spacer"></div>
 
     <!-- icon buttons (minimal, emoji-free) -->
@@ -78,6 +88,19 @@
   </header>
 
   <main>
+    <script>
+      document.getElementById('variant')?.addEventListener('change', (e) => {
+        const v = e.target.value;
+        const map = {
+          A: './dashboard-A-ops-console.html',
+          B: './dashboard-B-calm-productivity.html',
+          C: './dashboard-C-git-native.html',
+          D: './dashboard-D-minimal-monotone.html',
+        };
+        window.location.href = map[v] || map.D;
+      });
+    </script>
+
     <div class="grid">
       <section style="display:grid;gap:0px">
         <div class="card">
