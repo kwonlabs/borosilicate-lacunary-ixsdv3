@@ -1,12 +1,4 @@
 /* J) Neo-brutal */
-:root{
-  /* Tokens are defined in :root[data-mode] blocks. */
-}
-:root[data-mode="light"]{
-  /* override tokens for light mode (theme-specific). */
-}
-
-
 select, .btn{ box-shadow: 4px 4px 0 #111; }
 .btn:hover{ transform: translate(-1px,-1px); box-shadow: 6px 6px 0 #111; }
 

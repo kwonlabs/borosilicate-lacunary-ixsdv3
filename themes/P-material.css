@@ -1,12 +1,4 @@
 /* P) Material Design (approx) */
-:root{
-  /* Tokens are defined in :root[data-mode] blocks. */
-}
-:root[data-mode="light"]{
-  /* override tokens for light mode (theme-specific). */
-}
-
-
 .card{ box-shadow: var(--shadow); }
 
 /* CORE RULES */

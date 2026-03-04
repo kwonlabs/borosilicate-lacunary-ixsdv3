@@ -1,12 +1,4 @@
 /* N) Swiss / International Typographic Style (grid, typography, minimal) */
-:root{
-  /* Tokens are defined in :root[data-mode] blocks. */
-}
-:root[data-mode="light"]{
-  /* override tokens for light mode (theme-specific). */
-}
-
-
 .grid{ gap: 32px; }
 .kpis{ gap: 32px; }
 

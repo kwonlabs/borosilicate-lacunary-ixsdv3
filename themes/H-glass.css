@@ -1,12 +1,4 @@
 /* H) Glassmorphism */
-:root{
-  /* Tokens are defined in :root[data-mode] blocks. */
-}
-:root[data-mode="light"]{
-  /* override tokens for light mode (theme-specific). */
-}
-
-
 body{
   background:
     radial-gradient(circle at 20% 0%, rgba(167,139,250,.42) 0%, rgba(167,139,250,0) 55%),

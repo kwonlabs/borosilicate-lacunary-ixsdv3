@@ -1,12 +1,4 @@
 /* Q) Fluent Design (approx) */
-:root{
-  /* Tokens are defined in :root[data-mode] blocks. */
-}
-:root[data-mode="light"]{
-  /* override tokens for light mode (theme-specific). */
-}
-
-
 .topbar{ backdrop-filter: blur(12px); }
 .card{ backdrop-filter: blur(8px); }
 

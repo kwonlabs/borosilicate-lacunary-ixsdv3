@@ -1,12 +1,4 @@
 /* F) shadcn-like */
-:root{
-  /* Tokens are defined in :root[data-mode] blocks. */
-}
-:root[data-mode="light"]{
-  /* override tokens for light mode (theme-specific). */
-}
-
-
 /* CORE RULES */
 
 /* Spacing rules (theme-owned tokens) */

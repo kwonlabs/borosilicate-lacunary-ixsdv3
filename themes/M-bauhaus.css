@@ -1,12 +1,4 @@
 /* M) Bauhaus (functional, geometric, primary colors) */
-:root{
-  /* Tokens are defined in :root[data-mode] blocks. */
-}
-:root[data-mode="light"]{
-  /* override tokens for light mode (theme-specific). */
-}
-
-
 /* geometric / primary accents (not neo-brutal hard shadow) */
 body{
   background:

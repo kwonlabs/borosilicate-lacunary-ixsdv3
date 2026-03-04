@@ -1,12 +1,4 @@
 /* K) Cyberpunk */
-:root{
-  /* Tokens are defined in :root[data-mode] blocks. */
-}
-:root[data-mode="light"]{
-  /* override tokens for light mode (theme-specific). */
-}
-
-
 body{
   background:
     radial-gradient(circle at 20% 10%, rgba(0,245,255,.18) 0%, rgba(0,245,255,0) 55%),

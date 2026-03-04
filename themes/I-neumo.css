@@ -1,12 +1,4 @@
 /* I) Neumorphism */
-:root{
-  /* Tokens are defined in :root[data-mode] blocks. */
-}
-:root[data-mode="light"]{
-  /* override tokens for light mode (theme-specific). */
-}
-
-
 .btn:hover{ box-shadow: inset 8px 8px 18px rgba(0,0,0,.12), inset -8px -8px 18px rgba(255,255,255,.85); }
 .divider{ height: 0 !important; margin: 0 !important; }
 .line{ border-top: 0 !important; }

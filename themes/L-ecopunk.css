@@ -1,12 +1,4 @@
 /* L) Ecopunk */
-:root{
-  /* Tokens are defined in :root[data-mode] blocks. */
-}
-:root[data-mode="light"]{
-  /* override tokens for light mode (theme-specific). */
-}
-
-
 body{
   background:
     radial-gradient(circle at 20% 0%, rgba(16,185,129,.25) 0%, rgba(16,185,129,0) 55%),

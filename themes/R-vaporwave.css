@@ -1,12 +1,4 @@
 /* R) Vaporwave / Y2K */
-:root{
-  /* Tokens are defined in :root[data-mode] blocks. */
-}
-:root[data-mode="light"]{
-  /* override tokens for light mode (theme-specific). */
-}
-
-
 body{
   background:
     linear-gradient(135deg, rgba(255,113,206,.20) 0%, rgba(1,205,254,.18) 50%, rgba(185,103,255,.16) 100%),
