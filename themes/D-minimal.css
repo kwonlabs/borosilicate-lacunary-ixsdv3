@@ -84,8 +84,9 @@
   /* REQUIRED TOKENS (auto-added placeholders) */
   --btn-pad-x:  10px;
   --btn-pad-x-sm:  8px;
-  --control-height:  34px;
-  --control-height-sm:  28px;
+  --select-pad-x:  10px;
+  --control-height:  32px;
+  --control-height-sm:  26px;
   --font-mono:  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --fs-k:  11px;
   --lh-ui:  1.2;
