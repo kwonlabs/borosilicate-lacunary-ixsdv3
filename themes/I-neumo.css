@@ -1,89 +1,7 @@
 /* I) Neumorphism */
 :root{
-  --bg:#e9edf2;
-  --text:#1f2937;
-  --muted:#6b7280;
-  --accent:#1f2937;
-
-  --ok:#1f2937;
-  --warn:#1f2937;
-  --fail:#1f2937;
-
-  --border-width: 0px;
-  --hair: transparent;
-  --border: transparent;
-  --divider: transparent;
-
-  --radius: 18px;
-  --radius-sm: 18px;
-  --radius-pill: 18px;
-
-  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-  --fs-title: 18px;
-  --fs-sub: 13px;
-  --fs-ui: 13px;
-  --fw-title: 900;
-
-  --space-3: 16px;
-  --space-4: 22px;
-
-  --panel:#e9edf2;
-  --panel-border: transparent;
-  --shadow: 10px 10px 22px rgba(0,0,0,.12), -10px -10px 22px rgba(255,255,255,.85);
-
-  --select-bg:#e9edf2;
-  --select-border: transparent;
-  --select-radius: 18px;
-
-  --btn-bg:#e9edf2;
-  --btn-border: transparent;
-  --btn-hover-bg:#e9edf2;
-
-
-  /* layout & spacing (required) */
---max: 1100px;
-  --pad-x: 16px;
-  --pad-y: 18px;
-  --header-pad-y: 14px;
-  --header-gap: 10px;
-  --grid-gap: 18px;
-  --stack-gap: 18px;
-  --space-1: 6px;
-  --space-2: 10px;
-
-  /* REQUIRED TOKENS (auto-added placeholders) */
-  --badge-bg:  transparent;
-  --badge-fail-bg:  color-mix(in srgb, var(--fail) 20%, var(--badge-fill-bg));
-  --badge-fill-bg:  color-mix(in srgb, var(--bg) 88%, transparent);
-  --badge-fill-text:  var(--text);
-  --badge-ok-bg:  color-mix(in srgb, var(--ok) 20%, var(--badge-fill-bg));
-  --badge-warn-bg:  color-mix(in srgb, var(--warn) 20%, var(--badge-fill-bg));
-  --btn-pad-x:  10px;
-  --btn-pad-x-sm:  8px;
-  --control-height:  34px;
-  --control-height-sm:  28px;
-  --cta-bg: ;
-  --cta-border: ;
-  --cta-hover-bg: ;
-  --cta-text:  var(--text);
-  --font-mono:  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  --footer-bg:  color-mix(in srgb, var(--bg) 96%, transparent);
-  --fs-k:  11px;
-  --fs-v:  16px;
-  --fw-ui:  600;
-  --lh-sub:  1.55;
-  --lh-title:  1.2;
-  --lh-ui:  1.2;
-  --ls-title: ;
-  --select-pad-x:  10px;
-  --topbar-bg:  color-mix(in srgb, var(--bg) 92%, transparent);
-  --topbar-blur:  none;
-  --topbar-shadow: 0 1px 0 var(--divider);}
-
-:root[data-mode="dark"]{
-  /* override tokens for dark mode (theme-specific). */
+  /* Tokens are defined in :root[data-mode] blocks. */
 }
-
 :root[data-mode="light"]{
   /* override tokens for light mode (theme-specific). */
 }
@@ -149,9 +67,181 @@ select{
   max-width: min(72vw, 320px);
 }
 select:focus{
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent, transparent) 18%, transparent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent, transparent) 18%, trans
+
+:root[data-mode="light"]{
+  --accent: #1f2937;
+  --badge-bg: transparent;
+  --badge-fail-bg: color-mix(in srgb, var(--fail) 20%, var(--badge-fill-bg));
+  --badge-fill-bg: color-mix(in srgb, var(--bg) 88%, transparent);
+  --badge-fill-text: var(--text);
+  --badge-ok-bg: color-mix(in srgb, var(--ok) 20%, var(--badge-fill-bg));
+  --badge-warn-bg: color-mix(in srgb, var(--warn) 20%, var(--badge-fill-bg));
+  --bg: #e9edf2;
+  --border: transparent;
+  --border-width: 0px;
+  --btn-bg: #e9edf2;
+  --btn-border: transparent;
+  --btn-hover-bg: #e9edf2;
+  --btn-pad-x: 10px;
+  --btn-pad-x-sm: 8px;
+  --control-height: 34px;
+  --control-height-sm: 28px;
+  --cta-bg: ;
+  --cta-border: ;
+  --cta-hover-bg: ;
+  --cta-text: var(--text);
+  --divider: transparent;
+  --fail: #1f2937;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  --footer-bg: color-mix(in srgb, var(--bg) 96%, transparent);
+  --fs-k: 11px;
+  --fs-sub: 13px;
+  --fs-title: 18px;
+  --fs-ui: 13px;
+  --fs-v: 16px;
+  --fw-title: 900;
+  --fw-ui: 600;
+  --grid-gap: 18px;
+  --hair: transparent;
+  --header-gap: 10px;
+  --header-pad-y: 14px;
+  --lh-sub: 1.55;
+  --lh-title: 1.2;
+  --lh-ui: 1.2;
+  --ls-title: ;
+  --max: 1100px;
+  --muted: #6b7280;
+  --ok: #1f2937;
+  --pad-x: 16px;
+  --pad-y: 18px;
+  --panel: #e9edf2;
+  --panel-border: transparent;
+  --radius: 18px;
+  --radius-pill: 18px;
+  --radius-sm: 18px;
+  --select-bg: #e9edf2;
+  --select-border: transparent;
+  --select-pad-x: 10px;
+  --select-radius: 18px;
+  --shadow: 10px 10px 22px rgba(0,0,0,.12), -10px -10px 22px rgba(255,255,255,.85);
+  --space-1: 6px;
+  --space-2: 10px;
+  --space-3: 16px;
+  --space-4: 22px;
+  --stack-gap: 18px;
+  --text: #1f2937;
+  --topbar-bg: color-mix(in srgb, var(--bg) 92%, transparent);
+  --topbar-blur: none;
+  --topbar-shadow: 0 1px 0 var(--divider);
+  --warn: #1f2937;
+}
+
+:root[data-mode="dark"]{
+  --accent: #1f2937;
+  --badge-bg: transparent;
+  --badge-fail-bg: color-mix(in srgb, var(--fail) 20%, var(--badge-fill-bg));
+  --badge-fill-bg: rgba(255,255,255,.08);
+  --badge-fill-text: #f8fafc;
+  --badge-ok-bg: color-mix(in srgb, var(--ok) 20%, var(--badge-fill-bg));
+  --badge-warn-bg: color-mix(in srgb, var(--warn) 20%, var(--badge-fill-bg));
+  --bg: #0b0f14;
+  --border: rgba(255,255,255,.18);
+  --border-width: 0px;
+  --btn-bg: rgba(255,255,255,.06);
+  --btn-border: rgba(255,255,255,.18);
+  --btn-hover-bg: rgba(255,255,255,.10);
+  --btn-pad-x: 10px;
+  --btn-pad-x-sm: 8px;
+  --control-height: 34px;
+  --control-height-sm: 28px;
+  --cta-bg: ;
+  --cta-border: ;
+  --cta-hover-bg: ;
+  --cta-text: #f8fafc;
+  --divider: rgba(255,255,255,.12);
+  --fail: #1f2937;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  --footer-bg: rgba(255,255,255,.03);
+  --fs-k: 11px;
+  --fs-sub: 13px;
+  --fs-title: 18px;
+  --fs-ui: 13px;
+  --fs-v: 16px;
+  --fw-title: 900;
+  --fw-ui: 600;
+  --grid-gap: 18px;
+  --hair: rgba(255,255,255,.14);
+  --header-gap: 10px;
+  --header-pad-y: 14px;
+  --lh-sub: 1.55;
+  --lh-title: 1.2;
+  --lh-ui: 1.2;
+  --ls-title: ;
+  --max: 1100px;
+  --muted: rgba(248,250,252,.72);
+  --ok: #1f2937;
+  --pad-x: 16px;
+  --pad-y: 18px;
+  --panel: rgba(255,255,255,.06);
+  --panel-border: rgba(255,255,255,.14);
+  --radius: 18px;
+  --radius-pill: 18px;
+  --radius-sm: 18px;
+  --select-bg: rgba(255,255,255,.06);
+  --select-border: rgba(255,255,255,.18);
+  --select-pad-x: 10px;
+  --select-radius: 18px;
+  --shadow: 0 18px 60px rgba(0,0,0,.45);
+  --space-1: 6px;
+  --space-2: 10px;
+  --space-3: 16px;
+  --space-4: 22px;
+  --stack-gap: 18px;
+  --text: #f8fafc;
+  --topbar-bg: rgba(255,255,255,.04);
+  --topbar-blur: blur(14px);
+  --topbar-shadow: 0 1px 0 rgba(255,255,255,.10);
+  --warn: #1f2937;
+}
+parent);
   border-color: color-mix(in srgb, var(--accent, transparent) 35%, var(--select-border, transparent));
 }
+
+
+/* Mode toggle (radio group) */
+.mode{
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  padding: 2px;
+  margin: 0;
+  border: var(--border-width, 0px) solid var(--select-border, transparent);
+  border-radius: var(--select-radius, 0px);
+  background: var(--select-bg, transparent);
+}
+.mode-item{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--control-height, auto);
+  padding: 0 var(--btn-pad-x-sm, 0px);
+  border-radius: calc(var(--select-radius, 0px) - 2px);
+  font-size: var(--fs-ui, inherit);
+  line-height: var(--lh-ui, normal);
+  font-weight: var(--fw-ui, inherit);
+  color: var(--muted, inherit);
+  cursor: pointer;
+  user-select: none;
+}
+.mode-item input{ position:absolute; opacity:0; pointer-events:none; }
+.mode-item:has(input:checked){
+  background: var(--btn-hover-bg, transparent);
+  color: var(--text, inherit);
+}
+
 
 @media (max-width: 900px){
   select{ max-width: 56vw; }

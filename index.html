@@ -44,10 +44,10 @@
         </optgroup>
       </select>
 
-      <select id="mode" aria-label="Select mode">
-        <option value="light" selected>Light</option>
-        <option value="dark">Dark</option>
-      </select>
+      <fieldset class="mode" role="radiogroup" aria-label="Mode">
+  <label class="mode-item"><input type="radio" name="mode" value="light" checked>Light</label>
+  <label class="mode-item"><input type="radio" name="mode" value="dark">Dark</label>
+</fieldset>
 
       <div class="spacer"></div>
       <a class="btn" href="#">Board</a>
@@ -163,13 +163,14 @@
       };
 
       const sel = document.getElementById('variant');
-      const modeSel = document.getElementById('mode');
+      const modeField = document.querySelector('fieldset.mode');
       const link = document.getElementById('theme');
 
       function setMode(m){
         const mode = (m === 'dark') ? 'dark' : 'light';
         document.documentElement.dataset.mode = mode;
-        modeSel.value = mode;
+        // radio state
+        modeField.querySelectorAll('input[name=\"mode\"]').forEach((r)=>{r.checked = (r.value===mode);});
         const url = new URL(window.location.href);
         url.searchParams.set('m', mode);
         history.replaceState({}, '', url);
@@ -207,7 +208,9 @@
       }
 
       sel.addEventListener('change', () => setTheme(sel.value));
-      modeSel.addEventListener('change', () => setMode(modeSel.value));
+      modeField.addEventListener('change', (e) => {
+        if (e.target && e.target.name === 'mode') setMode(e.target.value);
+      });
 
       const params = new URL(window.location.href).searchParams;
       setMode(params.get('m') || 'light');
