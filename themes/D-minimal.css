@@ -50,13 +50,24 @@
   --btn-border:#eceef2;
   --btn-hover-bg: rgba(11,95,255,.06);
 
+  /* topbar */
+  --topbar-bg: rgba(255,255,255,.92);
+  --topbar-blur: blur(10px);
+
   /* CTA should look like Linear primary button */
   --cta-bg: #4f6ef7;
   --cta-border: #4f6ef7;
   --cta-text: #ffffff;
   --cta-hover-bg: #3f5eea;
-}
 
-/* Minimal: reduce card feel; rely on dividers + spacing */
-.card{ background: transparent; box-shadow: none; }
-.badge{ background: transparent; }
+  /* badges */
+  --badge-bg: transparent;
+  --badge-fill-bg: rgba(79,110,247,.12);
+  --badge-fill-text: var(--text);
+  --badge-ok-bg: rgba(79,110,247,.12);
+  --badge-warn-bg: rgba(79,110,247,.12);
+  --badge-fail-bg: rgba(225,29,72,.12);
+
+  /* footer */
+  --footer-bg: rgba(255,255,255,.92);
+}
