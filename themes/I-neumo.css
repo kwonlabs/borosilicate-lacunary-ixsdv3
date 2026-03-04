@@ -139,7 +139,6 @@
 }
 
 /* CORE RULES */
-
 /* Spacing rules (theme-owned tokens) */
 .topbar .wrap{
   padding: var(--header-pad-y, 0px) var(--pad-x, 0px);
@@ -322,3 +321,8 @@ select:focus{
 
 .app-footer{ border-top: var(--border-width, 0px) solid var(--divider, transparent); background: var(--footer-bg, transparent); }
 .footer-wrap{ max-width: var(--max, 1100px); margin: 0 auto; padding: var(--space-3, 0px) var(--pad-x, 0px); }
+
+
+/* Theme overrides: Neumo (soft inset on hover) */
+.btn:hover{ box-shadow: inset 8px 8px 18px rgba(0,0,0,.12), inset -8px -8px 18px rgba(255,255,255,.85); }
+
