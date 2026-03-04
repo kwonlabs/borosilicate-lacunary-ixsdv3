@@ -7,26 +7,22 @@ body{ margin:0; }
 .topbar .wrap{
   max-width: var(--max, 1100px);
   margin: 0 auto;
-  padding: var(--header-pad-y, 0px) var(--pad-x, 0px);
   display:flex;
   align-items:center;
-  gap: var(--header-gap, 0px);
 }
 .spacer{ flex:1; }
 
 main{
   max-width: var(--max, 1100px);
   margin: 0 auto;
-  padding: var(--pad-y, 0px) var(--pad-x, 0px);
 }
 
 .grid{
   display:grid;
   grid-template-columns: 1fr 360px;
-  gap: var(--grid-gap, 0px);
 }
 
-.stack{ display:grid; gap: var(--stack-gap, 0px); }
+.stack{ display:grid; }
 
 @media (max-width: 900px){
   .grid{ grid-template-columns: 1fr; }
