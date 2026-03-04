@@ -51,7 +51,190 @@
   --stack-gap: 18px;
   --space-1: 6px;
   --space-2: 10px;
+
+  /* REQUIRED TOKENS (auto-added placeholders) */
+  --badge-bg: ;
+  --badge-fail-bg: ;
+  --badge-fill-bg: ;
+  --badge-fill-text: ;
+  --badge-ok-bg: ;
+  --badge-warn-bg: ;
+  --btn-pad-x: ;
+  --btn-pad-x-sm: ;
+  --control-height: ;
+  --control-height-sm: ;
+  --cta-bg: ;
+  --cta-border: ;
+  --cta-hover-bg: ;
+  --cta-text: ;
+  --font-mono: ;
+  --footer-bg: ;
+  --fs-k: ;
+  --fs-v: ;
+  --fw-ui: ;
+  --lh-sub: ;
+  --lh-title: ;
+  --lh-ui: ;
+  --select-pad-x: ;
+  --topbar-bg: ;
+  --topbar-blur: ;
 }
 
 select, .btn{ box-shadow: 4px 4px 0 #111; }
 .btn:hover{ transform: translate(-1px,-1px); box-shadow: 6px 6px 0 #111; }
+
+/* CORE RULES */
+/* Theme system
+
+Goal:
+- Provide ONLY component styling rules.
+- No global defaults that "leak" (font/background/color) unless a theme explicitly sets tokens.
+- If tokens are missing, elements should render close to HTML defaults.
+
+How:
+- No :root defaults here.
+- Every var() usage includes a safe fallback.
+*/
+
+/* BODY: only apply themed look if tokens exist; otherwise inherit/transparent */
+body{
+  font-family: var(--font-sans, inherit);
+  background: var(--bg, transparent);
+  color: var(--text, inherit);
+}
+
+/* Header bar */
+.topbar{
+  border-bottom: var(--border-width, 0px) solid var(--divider, transparent);
+  background: var(--topbar-bg, transparent);
+  backdrop-filter: var(--topbar-blur, none);
+}
+
+/* Controls */
+select{
+  font-size: var(--fs-ui, inherit);
+  line-height: var(--lh-ui, normal);
+  font-weight: var(--fw-ui, inherit);
+  height: var(--control-height, auto);
+  padding: 0 var(--select-pad-x, 0px);
+  border-radius: var(--select-radius, 0px);
+  border: var(--border-width, 0px) solid var(--select-border, transparent);
+  background: var(--select-bg, transparent);
+  color: var(--text, inherit);
+  outline: none;
+  max-width: min(72vw, 320px);
+}
+select:focus{
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent, transparent) 18%, transparent);
+  border-color: color-mix(in srgb, var(--accent, transparent) 35%, var(--select-border, transparent));
+}
+
+@media (max-width: 900px){
+  select{ max-width: 56vw; }
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  height: var(--control-height, auto);
+  padding: 0 var(--btn-pad-x, 0px);
+  border-radius: var(--radius-sm, 0px);
+  border: var(--border-width, 0px) solid var(--btn-border, transparent);
+  background: var(--btn-bg, transparent);
+  color: var(--text, inherit);
+  text-decoration:none;
+  font-size: var(--fs-ui, inherit);
+  line-height: var(--lh-ui, normal);
+  font-weight: var(--fw-ui, inherit);
+  white-space: nowrap;
+}
+.btn:hover{ background: var(--btn-hover-bg, transparent); }
+
+.btn.cta{
+  background: var(--cta-bg, transparent);
+  border-color: var(--cta-border, transparent);
+  color: var(--cta-text, var(--text, inherit));
+}
+.btn.cta:hover{ background: var(--cta-hover-bg, transparent); }
+
+.btn.sm{
+  height: var(--control-height-sm, auto);
+  padding: 0 var(--btn-pad-x-sm, 0px);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Cards / surfaces */
+.card{
+  background: var(--panel, transparent);
+  border: var(--border-width, 0px) solid var(--panel-border, transparent);
+  border-radius: var(--radius, 0px);
+  box-shadow: var(--shadow, none);
+  padding: var(--space-3, 0px);
+}
+
+.h{ display:flex; align-items:flex-start; justify-content:space-between; gap: var(--space-2, 0px); }
+
+.title{
+  margin:0;
+  font-size: var(--fs-title, inherit);
+  line-height: var(--lh-title, normal);
+  font-weight: var(--fw-title, inherit);
+  letter-spacing: var(--ls-title, normal);
+}
+
+.sub{
+  margin:0;
+  margin-top: var(--space-1, 0px);
+  color: var(--muted, inherit);
+  font-size: var(--fs-sub, inherit);
+  line-height: var(--lh-sub, normal);
+  letter-spacing: .1px;
+}
+
+.baseline{ margin: 0 0 var(--space-2, 0px); font-size: 14px; line-height: 1.6; }
+
+.kpis{ display:flex; gap: var(--space-4, 0px); flex-wrap:wrap; margin-top: var(--space-3, 0px); font-family: var(--font-mono, inherit); }
+.kpi{ min-width: 160px; }
+.k{ font-size: var(--fs-k, inherit); color: var(--muted, inherit); margin-bottom: var(--space-1, 0px); }
+.v{ font-size: var(--fs-v, inherit); }
+
+.divider{ height: var(--border-width, 0px); background: var(--divider, transparent); margin: var(--space-3, 0px) 0; }
+
+.line{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: var(--space-2, 0px);
+  padding: var(--space-2, 0px) 0;
+  border-top: var(--border-width, 0px) solid var(--divider, transparent);
+}
+.line:first-child{ border-top: 0; }
+
+.badges{ display:flex; gap: var(--space-2, 0px); flex-wrap:wrap; }
+
+.badge{
+  font-family: var(--font-mono, inherit);
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill, 0px);
+  border: var(--border-width, 0px) solid var(--border, transparent);
+  color: var(--muted, inherit);
+  background: var(--badge-bg, transparent);
+}
+
+.badge.ok{ border-color: color-mix(in srgb, var(--ok, transparent) 40%, var(--border, transparent)); color: var(--text, inherit); }
+.badge.warn{ border-color: color-mix(in srgb, var(--warn, transparent) 40%, var(--border, transparent)); color: var(--text, inherit); }
+.badge.fail{ border-color: color-mix(in srgb, var(--fail, transparent) 40%, var(--border, transparent)); color: var(--text, inherit); }
+
+.badge.filled{ border-color: transparent; background: var(--badge-fill-bg, transparent); color: var(--badge-fill-text, var(--text, inherit)); }
+.badge.filled.ok{ background: var(--badge-ok-bg, transparent); }
+.badge.filled.warn{ background: var(--badge-warn-bg, transparent); }
+.badge.filled.fail{ background: var(--badge-fail-bg, transparent); }
+
+.event-code{ font-family: var(--font-mono, inherit); font-size: 12px; line-height: 1.5; color: var(--text, inherit); opacity: .92; }
+.event-code .muted{ color: var(--muted, inherit); opacity: 1; }
+
+.app-footer{ border-top: var(--border-width, 0px) solid var(--divider, transparent); background: var(--footer-bg, transparent); }
+.footer-wrap{ max-width: var(--max, 1100px); margin: 0 auto; padding: var(--space-3, 0px) var(--pad-x, 0px); }
