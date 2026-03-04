@@ -23,7 +23,8 @@
     *{box-sizing:border-box}
     body{margin:0;background:var(--bg);color:var(--text);font-family:var(--mono)}
     a{color:var(--accent);text-decoration:none}
-    .topbar{display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--border);background:rgba(13,17,23,.9);position:sticky;top:0}
+    .topbar{border-bottom:1px solid var(--border);background:rgba(13,17,23,.9);position:sticky;top:0}
+    .wrap{max-width:1100px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:12px}
     .brand{font-weight:700;color:var(--text)}
     .path{color:var(--muted)}
     .spacer{flex:1}
@@ -44,6 +45,7 @@
 </head>
 <body>
   <header class="topbar">
+    <div class="wrap">
     <label class="path" style="display:flex;align-items:center;gap:8px">
       <select id="variant" aria-label="Select variant" style="background:transparent;color:var(--text);border:1px solid var(--border);border-radius:8px;padding:6px 8px;font-family:var(--mono)">
         <option value="A">A) Ops Console</option>
@@ -65,6 +67,7 @@
     <a class="btn" href="#">board</a>
     <a class="btn" href="#">sync</a>
     <a class="btn" href="#">settings</a>
+      </div>
   </header>
 
   <main>
