@@ -1,0 +1,83 @@
+/* 01-base — light */
+
+:root[data-mode="light"]{
+  --bg: #ffffff;
+  --text: #0b0f14;
+  --muted: #667085;
+  --accent: #2563eb;
+
+  --ok: #16a34a;
+  --warn: #f59e0b;
+  --fail: #dc2626;
+
+  --border-width: 1px;
+  --hair: #e6e7eb;
+  --border: #e6e7eb;
+  --divider: #e6e7eb;
+
+  --radius: 10px;
+  --radius-sm: 10px;
+  --radius-pill: 999px;
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --fs-title: 16px;
+  --fs-sub: 12px;
+  --fs-k: 11px;
+  --fs-v: 16px;
+  --fs-ui: 13px;
+  --lh-title: 1.2;
+  --lh-sub: 1.55;
+  --lh-ui: 1.2;
+  --fw-title: 800;
+  --fw-ui: 600;
+  --ls-title: .2px;
+
+  --space-1: 6px;
+  --space-2: 10px;
+  --space-3: 14px;
+  --space-4: 18px;
+
+  --panel: transparent;
+  --panel-border: transparent;
+  --shadow: none;
+
+  --control-height: 34px;
+  --control-height-sm: 28px;
+  --select-bg: #ffffff;
+  --select-border: #e6e7eb;
+  --select-radius: var(--radius-sm);
+  --select-pad-x: 10px;
+
+  --btn-bg: transparent;
+  --btn-border: #e6e7eb;
+  --btn-hover-bg: rgba(37,99,235,.08);
+  --btn-pad-x: 10px;
+  --btn-pad-x-sm: 8px;
+
+  --cta-bg: rgba(37,99,235,.16);
+  --cta-border: rgba(37,99,235,.40);
+  --cta-text: #0b0f14;
+  --cta-hover-bg: rgba(37,99,235,.22);
+
+  --badge-bg: transparent;
+  --badge-fill-bg: rgba(37,99,235,.12);
+  --badge-fill-text: var(--text);
+  --badge-ok-bg: rgba(22,163,74,.12);
+  --badge-warn-bg: rgba(245,158,11,.12);
+  --badge-fail-bg: rgba(220,38,38,.12);
+
+  --topbar-bg: rgba(255,255,255,.92);
+  --topbar-blur: blur(10px);
+  --topbar-shadow: 0 1px 0 rgba(0,0,0,.06);
+  --footer-bg: rgba(255,255,255,.92);
+
+  --max: 1100px;
+  --pad-x: 16px;
+  --pad-y: 18px;
+  --header-pad-y: 14px;
+  --header-gap: 10px;
+  --grid-gap: 18px;
+  --stack-gap: 18px;
+}

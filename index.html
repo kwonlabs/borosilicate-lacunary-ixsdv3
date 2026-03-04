@@ -9,7 +9,8 @@
   <title>Dashboard — Theme Switcher</title>
 
   <link rel="stylesheet" href="./layout.css" />
-  <link id="theme" rel="stylesheet" href="./themes/D-minimal.css" />
+  <link id="themeCore" rel="stylesheet" href="./themes2/02-minimal/core.css" />
+  <link id="themeMode" rel="stylesheet" href="./themes2/02-minimal/light.css" />
 </head>
 <body>
   <header class="topbar" role="banner">
@@ -112,30 +113,25 @@
       </aside>
     </div>
 
-    <script>
-      const themeMap = {
+    <script>      const themeMap = {
         0: null,
-        A: './themes/A-ops.css',
-        B: './themes/B-calm.css',
-        D: './themes/D-minimal.css',
-        E: './themes/E-bootstrap.css',
-        F: './themes/F-shadcn.css',
-
-        M: './themes/M-bauhaus.css',
-        N: './themes/N-swiss.css',
-        O: './themes/O-flat.css',
-        P: './themes/P-material.css',
-        Q: './themes/Q-fluent.css',
-
-        H: './themes/H-glass.css',
-        I: './themes/I-neumo.css',
-        J: './themes/J-neobrutal.css',
-        R: './themes/R-vaporwave.css',
-
-        K: './themes/K-cyberpunk.css',
-        L: './themes/L-ecopunk.css',
-        G: './themes/G-skeuo.css',
-
+        D: { core: './themes2/02-minimal/core.css', light: './themes2/02-minimal/light.css', dark: './themes2/02-minimal/dark.css' },
+        B: { core: './themes2/03-calm/core.css', light: './themes2/03-calm/light.css', dark: './themes2/03-calm/dark.css' },
+        A: { core: './themes2/04-ops/core.css', light: './themes2/04-ops/light.css', dark: './themes2/04-ops/dark.css' },
+        E: { core: './themes2/05-bootstrap/core.css', light: './themes2/05-bootstrap/light.css', dark: './themes2/05-bootstrap/dark.css' },
+        F: { core: './themes2/06-shadcn/core.css', light: './themes2/06-shadcn/light.css', dark: './themes2/06-shadcn/dark.css' },
+        M: { core: './themes2/07-bauhaus/core.css', light: './themes2/07-bauhaus/light.css', dark: './themes2/07-bauhaus/dark.css' },
+        N: { core: './themes2/08-swiss/core.css', light: './themes2/08-swiss/light.css', dark: './themes2/08-swiss/dark.css' },
+        G: { core: './themes2/09-skeuo/core.css', light: './themes2/09-skeuo/light.css', dark: './themes2/09-skeuo/dark.css' },
+        O: { core: './themes2/10-flat/core.css', light: './themes2/10-flat/light.css', dark: './themes2/10-flat/dark.css' },
+        P: { core: './themes2/11-material/core.css', light: './themes2/11-material/light.css', dark: './themes2/11-material/dark.css' },
+        Q: { core: './themes2/12-fluent/core.css', light: './themes2/12-fluent/light.css', dark: './themes2/12-fluent/dark.css' },
+        K: { core: './themes2/13-cyberpunk/core.css', light: './themes2/13-cyberpunk/light.css', dark: './themes2/13-cyberpunk/dark.css' },
+        R: { core: './themes2/14-vaporwave/core.css', light: './themes2/14-vaporwave/light.css', dark: './themes2/14-vaporwave/dark.css' },
+        I: { core: './themes2/15-neumo/core.css', light: './themes2/15-neumo/light.css', dark: './themes2/15-neumo/dark.css' },
+        H: { core: './themes2/16-glass/core.css', light: './themes2/16-glass/light.css', dark: './themes2/16-glass/dark.css' },
+        J: { core: './themes2/17-neo-brutal/core.css', light: './themes2/17-neo-brutal/light.css', dark: './themes2/17-neo-brutal/dark.css' },
+        L: { core: './themes2/18-ecopunk/core.css', light: './themes2/18-ecopunk/light.css', dark: './themes2/18-ecopunk/dark.css' },
         Z: 'NOCSS',
       };
 
@@ -164,41 +160,41 @@
 
       const sel = document.getElementById('variant');
       const modeField = document.querySelector('fieldset.mode');
-      const link = document.getElementById('theme');
+      const themeCore = document.getElementById('themeCore');
+      const themeMode = document.getElementById('themeMode');
 
       function setMode(m){
         const mode = (m === 'dark') ? 'dark' : 'light';
         document.documentElement.dataset.mode = mode;
-        // radio state
         modeField.querySelectorAll('input[name=\"mode\"]').forEach((r)=>{r.checked = (r.value===mode);});
+
+        // swap mode css if theme selected
+        const t = sel.value;
+        if (t !== 'Z') {
+          const info = themeMap[t] || themeMap['D'];
+          themeMode.setAttribute('href', info[mode]);
+        }
+
         const url = new URL(window.location.href);
         url.searchParams.set('m', mode);
         history.replaceState({}, '', url);
       }
 
       function setTheme(v){
-        const href = (v in themeMap) ? themeMap[v] : themeMap.D;
+        // theme selection
         if (v === 'Z') {
-          // no CSS at all
-          document.querySelectorAll('link[rel="stylesheet"]').forEach((l) => (l.disabled = true));
+          // No CSS at all
+          document.querySelectorAll('link[rel="stylesheet"]').forEach((l)=>{
+            if (l.getAttribute('href') !== './layout.css') l.disabled = true;
+          });
         } else {
-          // ensure base is enabled
-          document
-            .querySelectorAll('link[rel="stylesheet"]')
-            .forEach((l) => (l.disabled = false));
-
-          if (href) {
-            link.disabled = false;
-            link.setAttribute('href', href);
-          } else {
-            // base only
-            link.disabled = true;
-          }
+          document.querySelectorAll('link[rel="stylesheet"]').forEach((l)=>{ l.disabled = false; });
+          const info = themeMap[v] || themeMap['D'];
+          themeCore.setAttribute('href', info.core);
+          themeMode.setAttribute('href', info[document.documentElement.dataset.mode === 'dark' ? 'dark' : 'light']);
         }
 
         sel.value = v;
-
-        // Update title line to numeric label (no alpha)
         const titleEl = document.querySelector('.title');
         if (titleEl && labels[v]) titleEl.textContent = `Dashboard (${labels[v]})`;
 

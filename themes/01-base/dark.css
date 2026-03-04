@@ -1,0 +1,83 @@
+/* 01-base — dark */
+
+:root[data-mode="dark"]{
+  --bg: #0b0f14;
+  --text: #f8fafc;
+  --muted: rgba(248,250,252,.72);
+  --accent: #60a5fa;
+
+  --ok: #34d399;
+  --warn: #fbbf24;
+  --fail: #fb7185;
+
+  --border-width: 1px;
+  --hair: rgba(255,255,255,.14);
+  --border: rgba(255,255,255,.18);
+  --divider: rgba(255,255,255,.12);
+
+  --radius: 10px;
+  --radius-sm: 10px;
+  --radius-pill: 999px;
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --fs-title: 16px;
+  --fs-sub: 12px;
+  --fs-k: 11px;
+  --fs-v: 16px;
+  --fs-ui: 13px;
+  --lh-title: 1.2;
+  --lh-sub: 1.55;
+  --lh-ui: 1.2;
+  --fw-title: 800;
+  --fw-ui: 600;
+  --ls-title: .2px;
+
+  --space-1: 6px;
+  --space-2: 10px;
+  --space-3: 14px;
+  --space-4: 18px;
+
+  --panel: rgba(255,255,255,.06);
+  --panel-border: rgba(255,255,255,.14);
+  --shadow: 0 18px 60px rgba(0,0,0,.45);
+
+  --control-height: 34px;
+  --control-height-sm: 28px;
+  --select-bg: rgba(255,255,255,.06);
+  --select-border: rgba(255,255,255,.18);
+  --select-radius: var(--radius-sm);
+  --select-pad-x: 10px;
+
+  --btn-bg: rgba(255,255,255,.06);
+  --btn-border: rgba(255,255,255,.18);
+  --btn-hover-bg: rgba(255,255,255,.10);
+  --btn-pad-x: 10px;
+  --btn-pad-x-sm: 8px;
+
+  --cta-bg: rgba(96,165,250,.22);
+  --cta-border: rgba(96,165,250,.40);
+  --cta-text: #f8fafc;
+  --cta-hover-bg: rgba(96,165,250,.30);
+
+  --badge-bg: transparent;
+  --badge-fill-bg: rgba(255,255,255,.08);
+  --badge-fill-text: var(--text);
+  --badge-ok-bg: rgba(52,211,153,.14);
+  --badge-warn-bg: rgba(251,191,36,.14);
+  --badge-fail-bg: rgba(251,113,133,.14);
+
+  --topbar-bg: rgba(255,255,255,.04);
+  --topbar-blur: blur(14px);
+  --topbar-shadow: 0 1px 0 rgba(255,255,255,.10);
+  --footer-bg: rgba(255,255,255,.03);
+
+  --max: 1100px;
+  --pad-x: 16px;
+  --pad-y: 18px;
+  --header-pad-y: 14px;
+  --header-gap: 10px;
+  --grid-gap: 18px;
+  --stack-gap: 18px;
+}
