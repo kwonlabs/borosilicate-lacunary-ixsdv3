@@ -48,7 +48,16 @@
       <div class="brand">Synapse</div>
       <div class="meta">design mocks</div>
       <div class="spacer"></div>
-      <div class="meta">mobile-first preview</div>
+
+      <label class="meta" for="variant" style="display:flex;align-items:center;gap:8px">
+        Variant
+        <select id="variant" aria-label="Select variant" style="font-size:13px;padding:8px 10px;border:1px solid var(--hair);border-radius:999px;background:#fff">
+          <option value="A">A) Ops Console</option>
+          <option value="B">B) Calm Productivity</option>
+          <option value="C">C) Git-native</option>
+          <option value="D">D) Minimal Monotone</option>
+        </select>
+      </label>
     </div>
   </header>
 
@@ -65,15 +74,7 @@
 
         <div style="height:18px"></div>
 
-        <p class="sectionTitle">Variants</p>
-        <div class="seg" role="group" aria-label="Variant selector">
-          <button data-v="A" aria-pressed="true">A</button>
-          <button data-v="B" aria-pressed="false">B</button>
-          <button data-v="C" aria-pressed="false">C</button>
-          <button data-v="D" aria-pressed="false">D</button>
-        </div>
-
-        <p class="sectionTitle" style="margin-top:12px">Open standalone</p>
+        <p class="sectionTitle">Open standalone</p>
         <div class="list" style="gap:8px">
           <a class="card" id="standalone" href="./dashboard-A-ops-console.html">
             <div class="name">Open current mock</div>
@@ -107,25 +108,22 @@
       const path = document.getElementById('viewer-path');
       const standalone = document.getElementById('standalone');
 
+      const variantSelect = document.getElementById('variant');
+
       function setVariant(v) {
         const info = map[v] || map.A;
         title.textContent = info.title;
         path.textContent = info.file.replace('./','');
         frame.src = info.file;
         standalone.href = info.file;
-
-        document.querySelectorAll('.seg button').forEach((b) => {
-          b.setAttribute('aria-pressed', b.dataset.v === v ? 'true' : 'false');
-        });
+        if (variantSelect.value !== v) variantSelect.value = v;
 
         const url = new URL(window.location.href);
         url.searchParams.set('v', v);
         history.replaceState({}, '', url);
       }
 
-      document.querySelectorAll('.seg button').forEach((b) => {
-        b.addEventListener('click', () => setVariant(b.dataset.v));
-      });
+      variantSelect.addEventListener('change', () => setVariant(variantSelect.value));
 
       const initial = new URL(window.location.href).searchParams.get('v') || 'A';
       setVariant(initial);
