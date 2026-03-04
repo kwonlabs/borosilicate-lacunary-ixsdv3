@@ -143,6 +143,7 @@ select{
   background: var(--select-bg);
   color: var(--text);
   outline: none;
+  max-width: min(72vw, 320px);
 }
 select:focus{
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 18%, transparent);
@@ -179,6 +180,7 @@ select:focus{
   height: var(--control-height-sm);
   padding: 0 var(--btn-pad-x-sm);
   font-size: 12px;
+  font-weight: 500;
 }
 
 main{
@@ -197,6 +199,8 @@ main{
 }
 @media (max-width: 900px){
   .grid{ grid-template-columns: 1fr; }
+  .topbar .wrap{ gap: var(--space-1); }
+  select{ max-width: 56vw; }
 }
 
 .stack{ display:grid; gap: var(--space-4); }
