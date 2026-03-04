@@ -25,10 +25,10 @@
   --border: var(--hair);
   --divider: var(--hair);
 
-  /* radii */
-  --radius: 14px;
-  --radius-sm: 10px;
-  --radius-pill: 999px;
+  /* radii (set by theme) */
+  /* --radius */
+  /* --radius-sm */
+  /* --radius-pill */
 
   /* typography */
   --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
