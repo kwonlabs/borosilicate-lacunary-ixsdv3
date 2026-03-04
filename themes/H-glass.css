@@ -1,18 +1,19 @@
 /* H) Glassmorphism */
 :root{
+  /* dark backdrop with light text */
   --bg:#0b1020;
-  --text:#0b0f14;
-  --muted:#4b5563;
+  --text:#f8fafc;
+  --muted:rgba(248,250,252,.72);
   --accent:#60a5fa;
 
-  --ok:#16a34a;
-  --warn:#d97706;
-  --fail:#dc2626;
+  --ok:#34d399;
+  --warn:#fbbf24;
+  --fail:#fb7185;
 
   --border-width: 1px;
-  --hair: rgba(255,255,255,.28);
-  --border: rgba(255,255,255,.28);
-  --divider: rgba(255,255,255,.35);
+  --hair: rgba(255,255,255,.22);
+  --border: rgba(255,255,255,.22);
+  --divider: rgba(255,255,255,.18);
 
   --radius: 18px;
   --radius-sm: 12px;
@@ -23,27 +24,39 @@
   --fs-sub: 13px;
   --fs-ui: 13px;
   --fw-title: 900;
+  --ls-title: .3px;
 
   --space-3: 14px;
   --space-4: 20px;
 
-  --panel: rgba(255,255,255,.45);
-  --panel-border: rgba(255,255,255,.35);
-  --shadow: 0 18px 48px rgba(0,0,0,.28);
+  /* glass surfaces */
+  --panel: rgba(255,255,255,.10);
+  --panel-border: rgba(255,255,255,.22);
+  --shadow: 0 18px 48px rgba(0,0,0,.35);
 
-  --select-bg: rgba(255,255,255,.25);
-  --select-border: rgba(255,255,255,.35);
+  --select-bg: rgba(255,255,255,.10);
+  --select-border: rgba(255,255,255,.22);
   --select-radius: var(--radius-sm);
 
-  --btn-bg: rgba(255,255,255,.18);
-  --btn-border: rgba(255,255,255,.28);
-  --btn-hover-bg: rgba(255,255,255,.28);
+  --btn-bg: rgba(255,255,255,.10);
+  --btn-border: rgba(255,255,255,.22);
+  --btn-hover-bg: rgba(255,255,255,.16);
+
+  --cta-bg: rgba(96,165,250,.22);
+  --cta-border: rgba(96,165,250,.40);
+  --cta-hover-bg: rgba(96,165,250,.30);
 }
 
 body{
   background:
-    radial-gradient(circle at 20% 0%, #a78bfa 0%, rgba(167,139,250,0) 55%),
-    radial-gradient(circle at 80% 20%, #60a5fa 0%, rgba(96,165,250,0) 55%),
-    radial-gradient(circle at 60% 90%, #34d399 0%, rgba(52,211,153,0) 55%),
+    radial-gradient(circle at 20% 0%, rgba(167,139,250,.42) 0%, rgba(167,139,250,0) 55%),
+    radial-gradient(circle at 80% 20%, rgba(96,165,250,.40) 0%, rgba(96,165,250,0) 55%),
+    radial-gradient(circle at 60% 90%, rgba(52,211,153,.28) 0%, rgba(52,211,153,0) 55%),
     #0b1020;
 }
+
+/* blur layers */
+.topbar{ backdrop-filter: blur(16px); }
+.card{ backdrop-filter: blur(16px); }
+select{ backdrop-filter: blur(16px); }
+.btn{ backdrop-filter: blur(16px); }
