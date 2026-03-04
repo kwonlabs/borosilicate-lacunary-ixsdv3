@@ -15,8 +15,8 @@
   --divider:#eceef2;
 
   /* Linear-like: controls share same radius */
-  --radius: 10px;
-  --radius-sm: 10px;
+  --radius: 5px;
+  --radius-sm: 5px;
   --radius-pill: 999px;
 
   --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
