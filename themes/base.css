@@ -69,6 +69,10 @@
   --control-radius: var(--radius-sm);
   --control-height: 34px;
 
+  /* small control */
+  --control-height-sm: 28px;
+  --btn-pad-x-sm: 8px;
+
   --select-radius: var(--control-radius);
   --select-pad-y: 8px;
   --select-pad-x: 10px;
@@ -170,6 +174,12 @@ select:focus{
   color: var(--cta-text);
 }
 .btn.cta:hover{ background: var(--cta-hover-bg); }
+
+.btn.sm{
+  height: var(--control-height-sm);
+  padding: 0 var(--btn-pad-x-sm);
+  font-size: 12px;
+}
 
 main{
   max-width: var(--max);
