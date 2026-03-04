@@ -192,3 +192,7 @@ select:focus{
 
 
 /* Theme overrides: (none) */
+
+/* Concept: Bootstrap (classic panels, obvious borders, readable) */
+.card{ background: var(--panel); border-color: var(--border); box-shadow: 0 8px 20px rgba(0,0,0,.08); }
+.btn{ border-radius: 8px; }

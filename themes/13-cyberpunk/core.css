@@ -193,3 +193,8 @@ select:focus{
 
 /* Theme overrides: Neon (glow edges) */
 .card{ box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent), var(--shadow); }
+
+/* Concept: Cyberpunk (neon lines, scan glow) */
+body{ background: radial-gradient(1200px 600px at 10% 0%, color-mix(in srgb, var(--accent) 24%, transparent), transparent 60%), var(--bg); }
+.card{ box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 26%, transparent), 0 22px 70px rgba(0,0,0,.55); }
+.btn.cta{ box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 40%, transparent), 0 0 24px color-mix(in srgb, var(--accent) 40%, transparent); }

@@ -192,3 +192,8 @@ select:focus{
 
 
 /* Theme overrides: (none) */
+
+/* Concept: Eco-punk (organic, paper-ish, earthy separation) */
+body{ background: linear-gradient(180deg, color-mix(in srgb, var(--bg) 86%, #b7f7c6 14%), var(--bg)); }
+.card{ background: var(--panel); border-color: color-mix(in srgb, var(--border) 70%, #2f6b3d 30%); box-shadow: 0 14px 40px rgba(0,0,0,.14); }
+.badge{ font-weight: 650; }

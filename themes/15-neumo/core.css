@@ -193,3 +193,8 @@ select:focus{
 
 /* Theme overrides: Neumo (soft inset on hover) */
 .btn:hover{ box-shadow: inset 8px 8px 18px rgba(0,0,0,.12), inset -8px -8px 18px rgba(255,255,255,.85); }
+
+/* Concept: Neumorphism (soft inset/outset) */
+.card{ border-color: transparent; box-shadow: 12px 12px 24px rgba(0,0,0,.14), -12px -12px 24px rgba(255,255,255,.55); }
+.btn{ border-color: transparent; box-shadow: 8px 8px 18px rgba(0,0,0,.14), -8px -8px 18px rgba(255,255,255,.55); }
+.btn:hover{ box-shadow: inset 8px 8px 18px rgba(0,0,0,.12), inset -8px -8px 18px rgba(255,255,255,.55); }

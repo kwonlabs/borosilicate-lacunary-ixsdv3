@@ -196,3 +196,8 @@ select:focus{
 .card::before{ content:""; position:absolute; inset:0; pointer-events:none;
   background: linear-gradient(135deg, rgba(255,255,255,.22) 0%, rgba(255,255,255,0) 35%);
 }
+
+/* Concept: Glassmorphism (blur + specular) */
+body{ background: radial-gradient(900px 500px at 20% 0%, rgba(255,255,255,.14), transparent 55%), var(--bg); }
+.card{ background: color-mix(in srgb, var(--panel) 70%, transparent); backdrop-filter: blur(16px); }
+.card::after{ content:""; position:absolute; inset:0; pointer-events:none; border-radius: inherit; box-shadow: inset 0 1px 0 rgba(255,255,255,.35); }

@@ -192,3 +192,10 @@ select:focus{
 
 
 /* Theme overrides: (none) */
+
+/* Concept: Ops console (dense, terminal-ish, sharp) */
+body{ font-family: var(--font-mono, ui-monospace, monospace); letter-spacing: .2px; }
+.card{ border-radius: 0; box-shadow:none; }
+.btn{ border-radius: 0; }
+.badge{ border-radius: 0; }
+.kpis{ opacity: .95; }

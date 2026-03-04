@@ -192,3 +192,8 @@ select:focus{
 
 
 /* Theme overrides: (none) */
+
+/* Concept: Bauhaus (bold geometry, blocks, strong separation) */
+body{ background: linear-gradient(180deg, color-mix(in srgb, var(--bg) 88%, var(--accent) 12%), var(--bg)); }
+.card{ border-radius: 0; border-width: 2px; }
+.btn{ border-radius: 0; border-width: 2px; text-transform: uppercase; letter-spacing: .6px; }

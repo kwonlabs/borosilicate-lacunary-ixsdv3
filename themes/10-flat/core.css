@@ -192,3 +192,7 @@ select:focus{
 
 
 /* Theme overrides: (none) */
+
+/* Concept: Flat (no shadows, clean blocks) */
+.card{ box-shadow:none; border-radius: 6px; }
+.btn{ box-shadow:none; }

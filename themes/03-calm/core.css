@@ -192,3 +192,8 @@ select:focus{
 
 
 /* Theme overrides: (none) */
+
+/* Concept: Calm productivity (soft surfaces, gentle depth) */
+body{ background: var(--bg); }
+.card{ background: color-mix(in srgb, var(--bg) 86%, white); border-color: color-mix(in srgb, var(--border) 70%, transparent); box-shadow: 0 10px 26px rgba(0,0,0,.06); }
+.btn{ background: color-mix(in srgb, var(--bg) 92%, var(--accent) 8%); }

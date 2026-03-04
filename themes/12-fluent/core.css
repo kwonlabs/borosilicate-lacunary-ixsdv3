@@ -192,3 +192,7 @@ select:focus{
 
 
 /* Theme overrides: (none) */
+
+/* Concept: Fluent (mica-ish, layered translucency) */
+.topbar{ background: color-mix(in srgb, var(--topbar-bg) 70%, transparent); }
+.card{ background: color-mix(in srgb, var(--panel) 70%, transparent); backdrop-filter: blur(10px); }

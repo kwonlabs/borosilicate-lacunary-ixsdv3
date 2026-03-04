@@ -192,3 +192,7 @@ select:focus{
 
 
 /* Theme overrides: (none) */
+
+/* Concept: shadcn/ui (neutral, modern, hairline + subtle shadow) */
+.card{ background: var(--panel); border-color: color-mix(in srgb, var(--border) 70%, transparent); box-shadow: 0 14px 40px rgba(0,0,0,.10); }
+.btn{ background: var(--btn-bg); }

@@ -192,3 +192,9 @@ select:focus{
 
 
 /* Theme overrides: (none) */
+
+/* Concept: Swiss (grid, typographic hierarchy, sharp lines) */
+body{ letter-spacing: .1px; }
+.title{ text-transform: uppercase; letter-spacing: 1.2px; }
+.card{ border-radius: 0; box-shadow:none; }
+.divider{ background: var(--divider); }

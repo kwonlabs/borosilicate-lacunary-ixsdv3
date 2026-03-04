@@ -195,3 +195,10 @@ select:focus{
 .card{ background: transparent; border-color: transparent; box-shadow:none; }
 .badge{ background: transparent; }
 .btn{ border-color: var(--border); }
+
+/* Concept: Minimal monotone (quiet, crisp, hairlines) */
+body{ background: var(--bg); }
+.card{ background: transparent; border-color: transparent; box-shadow:none; }
+.divider{ background: var(--hair); }
+.btn{ border-color: var(--hair); }
+.badge{ border-color: var(--hair); }

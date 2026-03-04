@@ -192,3 +192,8 @@ select:focus{
 
 
 /* Theme overrides: (none) */
+
+/* Concept: Material (elevation steps, rounded, ripple-ish hover) */
+.card{ border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,.18); }
+.btn{ border-radius: 999px; }
+.btn:hover{ filter: saturate(1.1); }
