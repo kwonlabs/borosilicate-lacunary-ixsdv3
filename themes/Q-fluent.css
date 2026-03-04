@@ -1,0 +1,47 @@
+/* Q) Fluent Design (approx) */
+:root{
+  --bg:#f2f4f8;
+  --text:#0b0f14;
+  --muted:#5b6470;
+  --accent:#0078d4;
+
+  --ok:#0078d4;
+  --warn:#f7b500;
+  --fail:#d13438;
+
+  --border-width: 1px;
+  --hair: rgba(0,0,0,.08);
+  --border: rgba(0,0,0,.10);
+  --divider: rgba(0,0,0,.08);
+
+  --radius: 12px;
+  --radius-sm: 10px;
+  --radius-pill: 999px;
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  --fs-title: 18px;
+  --fs-sub: 13px;
+  --fs-ui: 13px;
+  --fw-title: 800;
+
+  --space-3: 14px;
+  --space-4: 20px;
+
+  --panel: rgba(255,255,255,.75);
+  --panel-border: rgba(0,0,0,.08);
+  --shadow: 0 12px 26px rgba(0,0,0,.10);
+
+  --select-bg: rgba(255,255,255,.85);
+  --select-border: rgba(0,0,0,.10);
+
+  --btn-bg: rgba(255,255,255,.85);
+  --btn-border: rgba(0,0,0,.10);
+  --btn-hover-bg: rgba(0,120,212,.08);
+
+  --cta-bg: rgba(0,120,212,.18);
+  --cta-border: rgba(0,120,212,.35);
+  --cta-hover-bg: rgba(0,120,212,.26);
+}
+
+.topbar{ backdrop-filter: blur(12px); }
+.card{ backdrop-filter: blur(8px); }

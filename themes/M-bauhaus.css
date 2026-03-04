@@ -1,0 +1,51 @@
+/* M) Bauhaus (functional, geometric, primary colors) */
+:root{
+  --bg:#f5f0e6;
+  --text:#111;
+  --muted:#3b3b3b;
+  --accent:#111;
+
+  --ok:#0ea5e9;
+  --warn:#f59e0b;
+  --fail:#ef4444;
+
+  --border-width: 2px;
+  --hair:#111;
+  --border:#111;
+  --divider:#111;
+
+  --radius: 0px;
+  --radius-sm: 0px;
+  --radius-pill: 0px;
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  --fs-title: 20px;
+  --fs-sub: 13px;
+  --fs-ui: 13px;
+  --fw-title: 950;
+  --ls-title: .8px;
+
+  --space-3: 14px;
+  --space-4: 22px;
+
+  --panel:#ffffff;
+  --panel-border:#111;
+  --shadow: 0 0 0 0 transparent;
+
+  --select-bg:#ffffff;
+  --select-border:#111;
+  --btn-bg:#ffffff;
+  --btn-border:#111;
+  --btn-hover-bg:#fef08a;
+
+  --cta-bg:#fde047;
+  --cta-border:#111;
+  --cta-hover-bg:#facc15;
+}
+
+.card{ box-shadow: 6px 6px 0 #111; }
+.btn{ box-shadow: 4px 4px 0 #111; }
+.btn:hover{ transform: translate(-1px,-1px); box-shadow: 6px 6px 0 #111; }
+.badge.filled.ok{ background: #38bdf8; }
+.badge.filled.warn{ background: #fdba74; }
+.badge.filled.fail{ background: #fca5a5; }

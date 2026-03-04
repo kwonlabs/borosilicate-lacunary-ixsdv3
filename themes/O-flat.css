@@ -1,0 +1,44 @@
+/* O) Flat design */
+:root{
+  --bg:#ffffff;
+  --text:#111827;
+  --muted:#6b7280;
+  --accent:#2563eb;
+
+  --ok:#16a34a;
+  --warn:#f59e0b;
+  --fail:#dc2626;
+
+  --border-width: 1px;
+  --hair:#e5e7eb;
+  --border:#e5e7eb;
+  --divider:#e5e7eb;
+
+  --radius: 8px;
+  --radius-sm: 8px;
+  --radius-pill: 999px;
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  --fs-title: 18px;
+  --fs-sub: 13px;
+  --fs-ui: 13px;
+  --fw-title: 800;
+
+  --space-3: 14px;
+  --space-4: 18px;
+
+  --panel:#ffffff;
+  --panel-border:#e5e7eb;
+  --shadow: none;
+
+  --select-bg:#ffffff;
+  --select-border:#e5e7eb;
+
+  --btn-bg:#ffffff;
+  --btn-border:#e5e7eb;
+  --btn-hover-bg: rgba(37,99,235,.08);
+
+  --cta-bg: rgba(37,99,235,.14);
+  --cta-border: rgba(37,99,235,.40);
+  --cta-hover-bg: rgba(37,99,235,.20);
+}

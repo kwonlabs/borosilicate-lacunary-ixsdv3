@@ -1,0 +1,50 @@
+/* N) Swiss / International Typographic Style (grid, typography, minimal) */
+:root{
+  --bg:#ffffff;
+  --text:#0b0f14;
+  --muted:#5b6470;
+  --accent:#0b5fff;
+
+  --ok:#0b5fff;
+  --warn:#0b5fff;
+  --fail:#0b5fff;
+
+  --border-width: 1px;
+  --hair:#e6e9ef;
+  --border:#e6e9ef;
+  --divider:#e6e9ef;
+
+  --radius: 0px;
+  --radius-sm: 0px;
+  --radius-pill: 0px;
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Helvetica, Arial;
+  --fs-title: 18px;
+  --fs-sub: 12px;
+  --fs-ui: 12px;
+  --fw-title: 800;
+  --fw-ui: 600;
+  --ls-title: 0px;
+
+  --space-1: 6px;
+  --space-2: 10px;
+  --space-3: 16px;
+  --space-4: 28px;
+
+  --panel: transparent;
+  --panel-border: transparent;
+  --shadow: none;
+
+  --select-bg:#ffffff;
+  --select-border:#e6e9ef;
+  --btn-bg: transparent;
+  --btn-border: transparent;
+  --btn-hover-bg: rgba(11,95,255,.08);
+
+  --cta-bg: rgba(11,95,255,.14);
+  --cta-border: rgba(11,95,255,.35);
+  --cta-hover-bg: rgba(11,95,255,.20);
+}
+
+.grid{ gap: 32px; }
+.kpis{ gap: 32px; }
