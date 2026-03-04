@@ -74,6 +74,12 @@
         <option value="B">B) Calm Productivity</option>
         <option value="C">C) Git-native</option>
         <option value="D">D) Minimal Monotone</option>
+        <option value="E">E) Bootstrap</option>
+        <option value="F">F) shadcn</option>
+        <option value="G">G) Skeuomorphism</option>
+        <option value="H">H) Glassmorphism</option>
+        <option value="I">I) Neumorphism</option>
+        <option value="J">J) Neo-brutal</option>
       </select>
     </label>
 
@@ -89,11 +95,17 @@
     <script>
       document.getElementById('variant')?.addEventListener('change', (e) => {
         const v = e.target.value;
-        const map = {
+                const map = {
           A: './dashboard-A-ops-console.html',
           B: './dashboard-B-calm-productivity.html',
           C: './dashboard-C-git-native.html',
           D: './dashboard-D-minimal-monotone.html',
+          E: './dashboard-E-bootstrap.html',
+          F: './dashboard-F-shadcn.html',
+          G: './dashboard-G-skeuo.html',
+          H: './dashboard-H-glass.html',
+          I: './dashboard-I-neumo.html',
+          J: './dashboard-J-neobrutal.html',
         };
         window.location.href = map[v] || map.A;
       });

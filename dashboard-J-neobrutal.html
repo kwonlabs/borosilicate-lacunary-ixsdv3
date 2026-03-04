@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Cache-Control" content="no-store, max-age=0" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>Dashboard — J) Neo-brutal</title>
+  <style>
+    :root{
+      --bg:#fff7ed;
+      --text:#111;
+      --muted:#333;
+      --border:#111;
+      --yellow:#fde047;
+      --pink:#f472b6;
+      --blue:#60a5fa;
+      --mono: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+      --sans: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans)}
+    .topbar{position:sticky;top:0;background:var(--bg);border-bottom:3px solid var(--border)}
+    .wrap{max-width:1100px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;gap:10px}
+    select{border:3px solid var(--border);background:#fff;padding:8px 10px;border-radius:0;font-size:13px}
+    .spacer{flex:1}
+    .btn{border:3px solid var(--border);background:#fff;padding:8px 10px;border-radius:0;font-size:13px;text-decoration:none;color:var(--text);box-shadow:4px 4px 0 var(--border)}
+    .btn:hover{transform:translate(-1px,-1px);box-shadow:6px 6px 0 var(--border)}
+    main{max-width:1100px;margin:0 auto;padding:18px 16px}
+    .grid{display:grid;grid-template-columns: 1fr 360px;gap:18px}
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+    .card{border:3px solid var(--border);background:#fff;box-shadow:6px 6px 0 var(--border);padding:14px}
+    .tag{display:inline-block;border:3px solid var(--border);padding:2px 8px;font-family:var(--mono);font-size:12px;background:var(--yellow)}
+    .muted{color:var(--muted);font-size:12px}
+    .kpis{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .kpi{border:3px solid var(--border);padding:10px 12px;min-width:160px;box-shadow:4px 4px 0 var(--border)}
+    .k{font-size:11px;color:var(--muted);margin-bottom:6px}
+    .v{font-family:var(--mono);font-size:16px}
+    .line{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-top:3px solid var(--border)}
+    .line:first-child{border-top:0}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <select id="variant" aria-label="Select variant">
+        <option value="A">A) Ops Console</option>
+        <option value="B">B) Calm Productivity</option>
+        <option value="C">C) Git-native</option>
+        <option value="D">D) Minimal Monotone</option>
+        <option value="E">E) Bootstrap</option>
+        <option value="F">F) shadcn</option>
+        <option value="G">G) Skeuomorphism</option>
+        <option value="H">H) Glassmorphism</option>
+        <option value="I">I) Neumorphism</option>
+        <option value="J" selected>J) Neo-brutal</option>
+      </select>
+      <div class="spacer"></div>
+      <a class="btn" href="#">Board</a>
+      <a class="btn" href="#">Sync</a>
+      <a class="btn" href="#">Run</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="grid">
+      <section style="display:grid;gap:18px">
+        <div class="card">
+          <span class="tag">DASHBOARD</span>
+          <div class="muted" style="margin-top:8px">bold borders, flat color, hard shadows</div>
+          <div class="kpis">
+            <div class="kpi" style="background:var(--yellow)"><div class="k">last_ok</div><div class="v">05:20</div></div>
+            <div class="kpi" style="background:var(--pink)"><div class="k">fails_24h</div><div class="v">2</div></div>
+            <div class="kpi" style="background:var(--blue)"><div class="k">pending</div><div class="v">4</div></div>
+          </div>
+        </div>
+        <div class="card">
+          <span class="tag" style="background:var(--blue)">EVENTS</span>
+          <div class="line"><div>github.webhook issue.edit syn-101</div><div class="muted">ok</div></div>
+          <div class="line"><div>linear.webhook issue.edit syn-130</div><div class="muted">fail(auth)</div></div>
+        </div>
+      </section>
+      <aside style="display:grid;gap:18px">
+        <div class="card">
+          <span class="tag" style="background:var(--pink)">SETUP</span>
+          <div class="muted" style="margin-top:10px;line-height:1.7">
+            github_app: installed<br/>linked_repo: kwonlabs/synapse<br/>linear: api_key + webhook
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <script>
+      document.getElementById('variant')?.addEventListener('change', (e) => {
+        const v = e.target.value;
+        const map = {
+          A: './dashboard-A-ops-console.html',
+          B: './dashboard-B-calm-productivity.html',
+          C: './dashboard-C-git-native.html',
+          D: './dashboard-D-minimal-monotone.html',
+          E: './dashboard-E-bootstrap.html',
+          F: './dashboard-F-shadcn.html',
+          G: './dashboard-G-skeuo.html',
+          H: './dashboard-H-glass.html',
+          I: './dashboard-I-neumo.html',
+          J: './dashboard-J-neobrutal.html',
+        };
+        window.location.href = map[v] || map.J;
+      });
+    </script>
+  </main>
+</body>
+</html>

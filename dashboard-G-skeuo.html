@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Cache-Control" content="no-store, max-age=0" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>Dashboard — G) Skeuomorphism</title>
+  <style>
+    :root{
+      --bg:#e7e1d7;
+      --paper:#f6f0e6;
+      --ink:#2a2521;
+      --muted:#6a5f55;
+      --shadow: rgba(0,0,0,.18);
+      --mono: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+      --sans: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:radial-gradient(circle at 20% 0%, #f7f1e7 0%, var(--bg) 50%, #d8d0c4 100%);color:var(--ink);font-family:var(--sans)}
+    .topbar{position:sticky;top:0;background:linear-gradient(#f7f1e7, #e9e1d6);box-shadow:0 10px 24px rgba(0,0,0,.12)}
+    .wrap{max-width:1100px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;gap:10px}
+    select{background:linear-gradient(#fff, #efe7dc);border:1px solid rgba(0,0,0,.18);border-radius:10px;padding:8px 10px;font-size:13px;box-shadow: inset 0 1px 0 rgba(255,255,255,.9)}
+    .spacer{flex:1}
+    .btn{border:1px solid rgba(0,0,0,.22);background:linear-gradient(#fff, #efe7dc);padding:8px 10px;border-radius:10px;font-size:13px;text-decoration:none;color:var(--ink);box-shadow: 0 3px 0 rgba(0,0,0,.08)}
+    .btn:active{transform:translateY(1px);box-shadow: 0 2px 0 rgba(0,0,0,.08)}
+    main{max-width:1100px;margin:0 auto;padding:22px 16px}
+    .grid{display:grid;grid-template-columns: 1fr 360px;gap:18px}
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+    .card{background:var(--paper);border:1px solid rgba(0,0,0,.14);border-radius:14px;padding:14px;box-shadow: 0 14px 30px var(--shadow), inset 0 1px 0 rgba(255,255,255,.9)}
+    .title{font-weight:800;letter-spacing:.3px}
+    .muted{color:var(--muted);font-size:12px}
+    .kpis{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;font-family:var(--mono)}
+    .kpi{min-width:160px}
+    .k{font-size:11px;color:var(--muted);margin-bottom:6px}
+    .v{font-size:16px}
+    .line{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-top:1px dashed rgba(0,0,0,.18)}
+    .line:first-child{border-top:0}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <select id="variant" aria-label="Select variant">
+        <option value="A">A) Ops Console</option>
+        <option value="B">B) Calm Productivity</option>
+        <option value="C">C) Git-native</option>
+        <option value="D">D) Minimal Monotone</option>
+        <option value="E">E) Bootstrap</option>
+        <option value="F">F) shadcn</option>
+        <option value="G" selected>G) Skeuomorphism</option>
+        <option value="H">H) Glassmorphism</option>
+        <option value="I">I) Neumorphism</option>
+        <option value="J">J) Neo-brutal</option>
+      </select>
+      <div class="spacer"></div>
+      <a class="btn" href="#">Board</a>
+      <a class="btn" href="#">Sync</a>
+      <a class="btn" href="#">Run</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="grid">
+      <section style="display:grid;gap:18px">
+        <div class="card">
+          <div class="title">Dashboard</div>
+          <div class="muted">paper, depth, tactile controls</div>
+          <div class="kpis">
+            <div class="kpi"><div class="k">last_ok</div><div class="v">05:20</div></div>
+            <div class="kpi"><div class="k">fails_24h</div><div class="v">2</div></div>
+            <div class="kpi"><div class="k">pending</div><div class="v">4</div></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="title">Events</div>
+          <div class="line"><div>github.webhook issue.edit syn-101</div><div class="muted">ok</div></div>
+          <div class="line"><div>linear.webhook issue.edit syn-130</div><div class="muted">fail(auth)</div></div>
+        </div>
+      </section>
+      <aside style="display:grid;gap:18px">
+        <div class="card">
+          <div class="title">Setup</div>
+          <div class="muted" style="margin-top:10px;line-height:1.7">
+            github_app: installed<br/>linked_repo: kwonlabs/synapse<br/>linear: api_key + webhook
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <script>
+      document.getElementById('variant')?.addEventListener('change', (e) => {
+        const v = e.target.value;
+        const map = {
+          A: './dashboard-A-ops-console.html',
+          B: './dashboard-B-calm-productivity.html',
+          C: './dashboard-C-git-native.html',
+          D: './dashboard-D-minimal-monotone.html',
+          E: './dashboard-E-bootstrap.html',
+          F: './dashboard-F-shadcn.html',
+          G: './dashboard-G-skeuo.html',
+          H: './dashboard-H-glass.html',
+          I: './dashboard-I-neumo.html',
+          J: './dashboard-J-neobrutal.html',
+        };
+        window.location.href = map[v] || map.G;
+      });
+    </script>
+  </main>
+</body>
+</html>
