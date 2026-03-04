@@ -3,6 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Cache-Control" content="no-store, max-age=0" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
   <title>Synapse Dashboard — A) Ops Console</title>
   <style>
     :root{
@@ -65,11 +68,8 @@
 </head>
 <body>
   <header class="topbar">
-    <div class="brand">Synapse</div>
-
     <label class="pill" style="display:flex;align-items:center;gap:8px">
-      Project
-      <select id="variant" style="background:transparent;color:var(--text);border:1px solid var(--border);border-radius:10px;padding:6px 8px">
+      <select id="variant" aria-label="Select variant" style="background:transparent;color:var(--text);border:1px solid var(--border);border-radius:10px;padding:6px 8px">
         <option value="A" selected>A) Ops Console</option>
         <option value="B">B) Calm Productivity</option>
         <option value="C">C) Git-native</option>
