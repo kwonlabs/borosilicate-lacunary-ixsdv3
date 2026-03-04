@@ -37,7 +37,7 @@
 
   --select-bg:#ffffff;
   --select-border:#e5e7eb;
-  --select-radius: 999px;
+  --select-radius: var(--radius-sm);
 
   --btn-bg:#ffffff;
   --btn-border:#e5e7eb;

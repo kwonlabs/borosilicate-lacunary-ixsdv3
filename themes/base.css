@@ -57,7 +57,10 @@
   /* controls */
   --select-bg: color-mix(in srgb, var(--bg) 92%, transparent);
   --select-border: var(--border);
-  --select-radius: var(--radius-pill);
+  /* control shape: select should match button look & feel */
+  --control-radius: var(--radius-sm);
+
+  --select-radius: var(--control-radius);
   --select-pad-y: 8px;
   --select-pad-x: 10px;
 
