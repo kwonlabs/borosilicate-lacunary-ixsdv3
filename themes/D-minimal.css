@@ -1,6 +1,6 @@
 /* D) Minimal (Linear-like calm minimal) */
 :root{
-  --bg:#f7f8fa;
+  --bg:#ffffff;
   --text:#0b0f14;
   --muted:#667085;
   --accent:#4f6ef7;
@@ -10,11 +10,12 @@
   --fail:#e11d48;
 
   --border-width: 1px;
-  --hair:#e6e7eb;
-  --border:#e6e7eb;
-  --divider:#e6e7eb;
+  --hair:#eceef2;
+  --border:#eceef2;
+  --divider:#eceef2;
 
-  --radius: 12px;
+  /* Linear-like: controls share same radius */
+  --radius: 10px;
   --radius-sm: 10px;
   --radius-pill: 999px;
 
@@ -27,24 +28,27 @@
   --lh-sub: 1.6;
   --fw-title: 750;
   --fw-ui: 600;
-  --ls-title: .0px;
+  --ls-title: 0px;
 
+  /* more whitespace, less card chrome */
   --space-1: 6px;
   --space-2: 10px;
-  --space-3: 16px;
-  --space-4: 24px;
-  --space-5: 32px;
+  --space-3: 18px;
+  --space-4: 28px;
+  --space-5: 36px;
 
-  --panel:#ffffff;
-  --panel-border:#e6e7eb;
-  --shadow: 0 10px 30px rgba(0,0,0,.05);
+  /* Panels are used sparingly in Linear; default to "no card" chrome */
+  --panel: transparent;
+  --panel-border: transparent;
+  --shadow: none;
 
   --select-bg:#ffffff;
-  --select-border:#e6e7eb;
+  --select-border:#eceef2;
 
-  --btn-bg:#ffffff;
-  --btn-border:#e6e7eb;
-  --btn-hover-bg: rgba(79,110,247,.08);
+  /* Buttons are subtle; CTA is the main filled control */
+  --btn-bg: transparent;
+  --btn-border:#eceef2;
+  --btn-hover-bg: rgba(11,95,255,.06);
 
   /* CTA should look like Linear primary button */
   --cta-bg: #4f6ef7;
@@ -52,3 +56,7 @@
   --cta-text: #ffffff;
   --cta-hover-bg: #3f5eea;
 }
+
+/* Minimal: reduce card feel; rely on dividers + spacing */
+.card{ background: transparent; box-shadow: none; }
+.badge{ background: transparent; }
