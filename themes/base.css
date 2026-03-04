@@ -70,6 +70,12 @@
   --btn-pad-y: 8px;
   --btn-pad-x: 10px;
 
+  /* CTA button (e.g., Run) */
+  --cta-bg: color-mix(in srgb, var(--accent) 14%, transparent);
+  --cta-border: color-mix(in srgb, var(--accent) 45%, var(--btn-border));
+  --cta-text: var(--text);
+  --cta-hover-bg: color-mix(in srgb, var(--accent) 20%, transparent);
+
   /* layout */
   --max: 1100px;
   --pad-x: 16px;
@@ -140,6 +146,13 @@ select:focus{
   font-weight: var(--fw-ui);
 }
 .btn:hover{ background: var(--btn-hover-bg); }
+
+.btn.cta{
+  background: var(--cta-bg);
+  border-color: var(--cta-border);
+  color: var(--cta-text);
+}
+.btn.cta:hover{ background: var(--cta-hover-bg); }
 
 main{
   max-width: var(--max);
