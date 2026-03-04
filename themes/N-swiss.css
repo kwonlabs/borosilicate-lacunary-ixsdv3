@@ -80,6 +80,15 @@
   --topbar-blur:  none;
   --topbar-shadow: 0 1px 0 var(--divider);}
 
+:root[data-mode="dark"]{
+  /* override tokens for dark mode (theme-specific). */
+}
+
+:root[data-mode="light"]{
+  /* override tokens for light mode (theme-specific). */
+}
+
+
 .grid{ gap: 32px; }
 .kpis{ gap: 32px; }
 

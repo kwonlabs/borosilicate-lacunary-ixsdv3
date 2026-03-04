@@ -81,6 +81,15 @@
   --topbar-blur:  none;
   --topbar-shadow: 0 1px 0 var(--divider);}
 
+:root[data-mode="dark"]{
+  /* override tokens for dark mode (theme-specific). */
+}
+
+:root[data-mode="light"]{
+  /* override tokens for light mode (theme-specific). */
+}
+
+
 .topbar{ backdrop-filter: blur(12px); }
 .card{ backdrop-filter: blur(8px); }
 

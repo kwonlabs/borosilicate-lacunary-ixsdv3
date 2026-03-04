@@ -82,6 +82,15 @@
   --topbar-blur:  none;
   --topbar-shadow: 0 1px 0 var(--divider);}
 
+:root[data-mode="dark"]{
+  /* override tokens for dark mode (theme-specific). */
+}
+
+:root[data-mode="light"]{
+  /* override tokens for light mode (theme-specific). */
+}
+
+
 body{
   background:
     linear-gradient(135deg, rgba(255,113,206,.20) 0%, rgba(1,205,254,.18) 50%, rgba(185,103,255,.16) 100%),

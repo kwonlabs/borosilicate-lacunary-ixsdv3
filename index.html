@@ -43,6 +43,12 @@
           <option value="L">18 Ecopunk</option>
         </optgroup>
       </select>
+
+      <select id="mode" aria-label="Select mode">
+        <option value="light" selected>Light</option>
+        <option value="dark">Dark</option>
+      </select>
+
       <div class="spacer"></div>
       <a class="btn" href="#">Board</a>
       <a class="btn" href="#">Sync</a>
@@ -157,7 +163,17 @@
       };
 
       const sel = document.getElementById('variant');
+      const modeSel = document.getElementById('mode');
       const link = document.getElementById('theme');
+
+      function setMode(m){
+        const mode = (m === 'dark') ? 'dark' : 'light';
+        document.documentElement.dataset.mode = mode;
+        modeSel.value = mode;
+        const url = new URL(window.location.href);
+        url.searchParams.set('m', mode);
+        history.replaceState({}, '', url);
+      }
 
       function setTheme(v){
         const href = (v in themeMap) ? themeMap[v] : themeMap.D;
@@ -191,9 +207,13 @@
       }
 
       sel.addEventListener('change', () => setTheme(sel.value));
+      modeSel.addEventListener('change', () => setMode(modeSel.value));
+
+      const params = new URL(window.location.href).searchParams;
+      setMode(params.get('m') || 'light');
 
       // Default start: No CSS baseline. Use ?t=... to jump directly.
-      setTheme(new URL(window.location.href).searchParams.get('t') || 'Z');
+      setTheme(params.get('t') || 'Z');
     </script>
   </main>
 
