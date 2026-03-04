@@ -1,20 +1,39 @@
-/* F) shadcn-like (dark, calm) */
+/* F) shadcn-like */
 :root{
   --bg:#0b0b0c;
   --text:#fafafa;
   --muted:#a1a1aa;
-  --hair:#27272a;
-
-  --panel: rgba(17,17,19,.90);
-  --panel-border:#27272a;
-  --shadow: 0 18px 60px rgba(0,0,0,.45);
-
-  --btn-bg: rgba(15,15,16,.85);
-  --btn-border:#27272a;
-  --btn-hover-bg: rgba(59,130,246,.16);
-
   --accent:#3b82f6;
+
   --ok:#22c55e;
   --warn:#f59e0b;
   --fail:#ef4444;
+
+  --border-width: 1px;
+  --hair:#27272a;
+  --border:#27272a;
+  --divider:#27272a;
+
+  --radius: 14px;
+  --radius-sm: 10px;
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  --fs-title: 16px;
+  --fs-sub: 12px;
+  --fs-ui: 13px;
+  --fw-title: 800;
+
+  --space-3: 14px;
+  --space-4: 18px;
+
+  --panel: rgba(17,17,19,.92);
+  --panel-border:#27272a;
+  --shadow: 0 18px 60px rgba(0,0,0,.45);
+
+  --select-bg: rgba(17,17,19,.92);
+  --select-border:#27272a;
+
+  --btn-bg: rgba(15,15,16,.9);
+  --btn-border:#27272a;
+  --btn-hover-bg: rgba(59,130,246,.16);
 }

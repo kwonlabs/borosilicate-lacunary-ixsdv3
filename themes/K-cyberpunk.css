@@ -3,20 +3,41 @@
   --bg:#07050f;
   --text:#e7e7ff;
   --muted:#a8a8c7;
+  --accent:#00f5ff;
+
+  --ok:#00f5ff;
+  --warn:#ffe600;
+  --fail:#ff2bd6;
+
+  --border-width: 1px;
   --hair: rgba(255,255,255,.12);
+  --border: rgba(0,245,255,.28);
+  --divider: rgba(255,255,255,.10);
+
+  --radius: 16px;
+  --radius-sm: 12px;
+  --radius-pill: 999px;
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  --fs-title: 18px;
+  --fs-sub: 12px;
+  --fs-ui: 13px;
+  --fw-title: 950;
+  --ls-title: .8px;
+
+  --space-3: 14px;
+  --space-4: 20px;
 
   --panel: rgba(14,10,26,.65);
   --panel-border: rgba(0,245,255,.18);
   --shadow: 0 24px 70px rgba(0,0,0,.55);
 
+  --select-bg: rgba(0,0,0,.25);
+  --select-border: rgba(0,245,255,.28);
+
   --btn-bg: rgba(0,245,255,.08);
   --btn-border: rgba(0,245,255,.28);
   --btn-hover-bg: rgba(255,43,214,.12);
-
-  --accent:#00f5ff;
-  --ok:#00f5ff;
-  --warn:#ffe600;
-  --fail:#ff2bd6;
 }
 
 body{
@@ -26,3 +47,5 @@ body{
     radial-gradient(circle at 60% 90%, rgba(255,230,0,.12) 0%, rgba(255,230,0,0) 55%),
     linear-gradient(180deg, #05040a 0%, #07050f 100%);
 }
+
+.btn, select{ box-shadow: 0 0 0 3px rgba(0,245,255,.10); }

@@ -3,20 +3,46 @@
   --bg:#0d1117;
   --text:#c9d1d9;
   --muted:#8b949e;
+  --accent:#58a6ff;
+
+  --ok:#3fb950;
+  --warn:#d29922;
+  --fail:#f85149;
+
+  --border-width: 1px;
   --hair:#30363d;
+  --border:#30363d;
+  --divider:#30363d;
+
+  --radius: 10px;
+  --radius-sm: 8px;
+
+  --font-sans: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --fs-title: 14px;
+  --fs-sub: 12px;
+  --fs-ui: 12px;
+  --fs-v: 14px;
+  --lh-title: 1.25;
+  --lh-sub: 1.55;
+  --fw-title: 800;
+  --ls-title: .0px;
+
+  --space-3: 12px;
+  --space-4: 16px;
 
   --panel:#161b22;
   --panel-border:#30363d;
   --shadow: none;
 
+  --select-bg:#161b22;
+  --select-border:#30363d;
+  --select-radius: 8px;
+
   --btn-bg:#161b22;
   --btn-border:#30363d;
   --btn-hover-bg: rgba(88,166,255,.12);
-
-  --accent:#58a6ff;
-  --ok:#3fb950;
-  --warn:#d29922;
-  --fail:#f85149;
-
-  --sans: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --btn-pad-y: 6px;
+  --btn-pad-x: 10px;
 }

@@ -1,28 +1,49 @@
 /* H) Glassmorphism */
 :root{
-  --bg: #0b1020;
+  --bg:#0b1020;
   --text:#0b0f14;
   --muted:#4b5563;
+  --accent:#60a5fa;
+
+  --ok:#16a34a;
+  --warn:#d97706;
+  --fail:#dc2626;
+
+  --border-width: 1px;
   --hair: rgba(255,255,255,.28);
+  --border: rgba(255,255,255,.28);
+  --divider: rgba(255,255,255,.35);
+
+  --radius: 18px;
+  --radius-sm: 12px;
+  --radius-pill: 999px;
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  --fs-title: 18px;
+  --fs-sub: 13px;
+  --fs-ui: 13px;
+  --fw-title: 900;
+
+  --space-3: 14px;
+  --space-4: 20px;
 
   --panel: rgba(255,255,255,.45);
   --panel-border: rgba(255,255,255,.35);
   --shadow: 0 18px 48px rgba(0,0,0,.28);
 
+  --select-bg: rgba(255,255,255,.25);
+  --select-border: rgba(255,255,255,.35);
+  --select-radius: 999px;
+
   --btn-bg: rgba(255,255,255,.18);
   --btn-border: rgba(255,255,255,.28);
   --btn-hover-bg: rgba(255,255,255,.28);
-
-  --accent:#60a5fa;
-  --ok:#16a34a;
-  --warn:#d97706;
-  --fail:#dc2626;
 }
 
 body{
   background:
-    radial-gradient(circle at 20% 0%, #a78bfa 0%, rgba(167,139,250,.0) 55%),
-    radial-gradient(circle at 80% 20%, #60a5fa 0%, rgba(96,165,250,.0) 55%),
-    radial-gradient(circle at 60% 90%, #34d399 0%, rgba(52,211,153,.0) 55%),
+    radial-gradient(circle at 20% 0%, #a78bfa 0%, rgba(167,139,250,0) 55%),
+    radial-gradient(circle at 80% 20%, #60a5fa 0%, rgba(96,165,250,0) 55%),
+    radial-gradient(circle at 60% 90%, #34d399 0%, rgba(52,211,153,0) 55%),
     #0b1020;
 }
