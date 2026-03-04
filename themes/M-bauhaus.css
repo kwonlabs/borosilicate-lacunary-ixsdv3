@@ -5,9 +5,9 @@
   --muted:#3b3b3b;
   --accent:#111;
 
-  --ok:#0ea5e9;
+  --ok:#2563eb;
   --warn:#f59e0b;
-  --fail:#ef4444;
+  --fail:#dc2626;
 
   --border-width: 2px;
   --hair:#111;
@@ -19,33 +19,47 @@
   --radius-pill: 0px;
 
   --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-  --fs-title: 20px;
+  --fs-title: 22px;
   --fs-sub: 13px;
   --fs-ui: 13px;
   --fw-title: 950;
-  --ls-title: .8px;
+  --ls-title: 1px;
 
-  --space-3: 14px;
-  --space-4: 22px;
+  --space-1: 6px;
+  --space-2: 10px;
+  --space-3: 16px;
+  --space-4: 28px;
 
   --panel:#ffffff;
   --panel-border:#111;
-  --shadow: 0 0 0 0 transparent;
+  --shadow: none;
 
   --select-bg:#ffffff;
   --select-border:#111;
+
   --btn-bg:#ffffff;
   --btn-border:#111;
-  --btn-hover-bg:#fef08a;
+  --btn-hover-bg:#fff7ed;
 
+  /* primary-color CTA */
   --cta-bg:#fde047;
   --cta-border:#111;
   --cta-hover-bg:#facc15;
 }
 
-.card{ box-shadow: 6px 6px 0 #111; }
-.btn{ box-shadow: 4px 4px 0 #111; }
-.btn:hover{ transform: translate(-1px,-1px); box-shadow: 6px 6px 0 #111; }
-.badge.filled.ok{ background: #38bdf8; }
-.badge.filled.warn{ background: #fdba74; }
-.badge.filled.fail{ background: #fca5a5; }
+/* geometric / primary accents (not neo-brutal hard shadow) */
+body{
+  background:
+    radial-gradient(circle at 18% 18%, rgba(220,38,38,.18) 0%, rgba(220,38,38,0) 40%),
+    radial-gradient(circle at 78% 22%, rgba(37,99,235,.18) 0%, rgba(37,99,235,0) 42%),
+    radial-gradient(circle at 62% 86%, rgba(245,158,11,.16) 0%, rgba(245,158,11,0) 45%),
+    #f5f0e6;
+}
+
+.card{ border-width: 2px; }
+.btn{ border-width: 2px; }
+select{ border-width: 2px; }
+
+.badge.filled.ok{ background: rgba(37,99,235,.20); }
+.badge.filled.warn{ background: rgba(245,158,11,.20); }
+.badge.filled.fail{ background: rgba(220,38,38,.20); }

@@ -10,46 +10,51 @@
   --fail:#b967ff;
 
   --border-width: 1px;
-  --hair: rgba(255,255,255,.14);
-  --border: rgba(255,255,255,.18);
+  --hair: rgba(255,255,255,.18);
+  --border: rgba(255,113,206,.30);
   --divider: rgba(255,255,255,.10);
 
-  --radius: 18px;
-  --radius-sm: 12px;
+  --radius: 22px;
+  --radius-sm: 14px;
   --radius-pill: 999px;
 
   --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-  --fs-title: 20px;
+  --fs-title: 22px;
   --fs-sub: 12px;
   --fs-ui: 13px;
   --fw-title: 950;
-  --ls-title: .8px;
+  --ls-title: 1px;
 
   --space-3: 14px;
-  --space-4: 20px;
+  --space-4: 22px;
 
-  --panel: rgba(255,255,255,.08);
-  --panel-border: rgba(255,255,255,.18);
-  --shadow: 0 24px 70px rgba(0,0,0,.55);
+  /* less "glass" and more neon poster */
+  --panel: rgba(18,0,43,.55);
+  --panel-border: rgba(255,113,206,.26);
+  --shadow: 0 26px 80px rgba(0,0,0,.65);
 
-  --select-bg: rgba(0,0,0,.20);
-  --select-border: rgba(255,113,206,.30);
+  --select-bg: rgba(18,0,43,.55);
+  --select-border: rgba(255,113,206,.36);
 
-  --btn-bg: rgba(255,113,206,.12);
-  --btn-border: rgba(255,113,206,.35);
-  --btn-hover-bg: rgba(1,205,254,.14);
+  --btn-bg: rgba(255,113,206,.14);
+  --btn-border: rgba(255,113,206,.38);
+  --btn-hover-bg: rgba(1,205,254,.16);
 
-  --cta-bg: rgba(1,205,254,.22);
-  --cta-border: rgba(1,205,254,.40);
-  --cta-hover-bg: rgba(1,205,254,.30);
+  --cta-bg: rgba(1,205,254,.26);
+  --cta-border: rgba(1,205,254,.50);
+  --cta-hover-bg: rgba(1,205,254,.34);
 }
 
 body{
   background:
-    radial-gradient(circle at 20% 0%, rgba(255,113,206,.30) 0%, rgba(255,113,206,0) 55%),
-    radial-gradient(circle at 80% 20%, rgba(1,205,254,.28) 0%, rgba(1,205,254,0) 55%),
-    radial-gradient(circle at 60% 90%, rgba(185,103,255,.22) 0%, rgba(185,103,255,0) 55%),
+    linear-gradient(135deg, rgba(255,113,206,.20) 0%, rgba(1,205,254,.18) 50%, rgba(185,103,255,.16) 100%),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0 2px, rgba(0,0,0,0) 2px 18px),
+    radial-gradient(circle at 20% 0%, rgba(255,113,206,.34) 0%, rgba(255,113,206,0) 55%),
+    radial-gradient(circle at 80% 20%, rgba(1,205,254,.30) 0%, rgba(1,205,254,0) 55%),
+    radial-gradient(circle at 60% 90%, rgba(185,103,255,.26) 0%, rgba(185,103,255,0) 55%),
     linear-gradient(180deg, #12002b 0%, #070013 100%);
 }
 
-.topbar, .card{ backdrop-filter: blur(16px); }
+/* neon-ish edges */
+.card{ box-shadow: 0 0 0 1px rgba(255,113,206,.16), var(--shadow); }
+.btn.cta{ box-shadow: 0 0 0 3px rgba(1,205,254,.10); }
