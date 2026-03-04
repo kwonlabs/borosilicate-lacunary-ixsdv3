@@ -90,6 +90,11 @@ body{
   background: color-mix(in srgb, var(--bg) 92%, transparent);
   backdrop-filter: blur(10px);
 }
+
+.app-footer{
+  border-top: var(--border-width) solid var(--divider);
+  background: color-mix(in srgb, var(--bg) 96%, transparent);
+}
 .topbar .wrap{
   max-width: var(--max);
   margin: 0 auto;

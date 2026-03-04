@@ -57,11 +57,11 @@
 
           <div class="divider" aria-hidden="true"></div>
 
-          <footer class="badges" aria-label="Status badges">
+          <div class="badges" aria-label="Status badges">
             <span class="badge ok">ok</span>
             <span class="badge warn">warn</span>
             <span class="badge fail">fail</span>
-          </footer>
+          </div>
         </article>
 
         <article class="card" aria-label="Events">
@@ -138,5 +138,11 @@
       setTheme(new URL(window.location.href).searchParams.get('t') || 'D');
     </script>
   </main>
+
+  <footer class="app-footer" role="contentinfo">
+    <div class="wrap" style="padding: var(--space-3) var(--pad-x);">
+      <div class="sub" style="margin:0">Mock only · Single HTML · Theme = CSS tokens</div>
+    </div>
+  </footer>
 </body>
 </html>
