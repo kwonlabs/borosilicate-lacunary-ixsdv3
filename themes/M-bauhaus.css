@@ -1,71 +1,7 @@
-/* M) Bauhaus (functional, geometric, primary colors) */
-/* geometric / primary accents (not neo-brutal hard shadow) */
-body{
-  background:
-    radial-gradient(circle at 18% 18%, rgba(220,38,38,.18) 0%, rgba(220,38,38,0) 40%),
-    radial-gradient(circle at 78% 22%, rgba(37,99,235,.18) 0%, rgba(37,99,235,0) 42%),
-    radial-gradient(circle at 62% 86%, rgba(245,158,11,.16) 0%, rgba(245,158,11,0) 45%),
-    #f5f0e6;
-}
-
-.card{ border-width: 2px; }
-.btn{ border-width: 2px; }
-select{ border-width: 2px; }
-
-.badge.filled.ok{ background: rgba(37,99,235,.20); }
-.badge.filled.warn{ background: rgba(245,158,11,.20); }
-.badge.filled.fail{ background: rgba(220,38,38,.20); }
-
-/* CORE RULES */
-
-/* Spacing rules (theme-owned tokens) */
-.topbar .wrap{
-  padding: var(--header-pad-y, 0px) var(--pad-x, 0px);
-  gap: var(--header-gap, 0px);
-}
-main{
-  padding: var(--pad-y, 0px) var(--pad-x, 0px);
-}
-.grid{ gap: var(--grid-gap, 0px); }
-.stack{ gap: var(--stack-gap, 0px); }
-
-/* Theme system
-
-Goal:
-- Provide ONLY component styling rules.
-- No global defaults that "leak" (font/background/color) unless a theme explicitly sets tokens.
-- If tokens are missing, elements should render close to HTML defaults.
-
-How:
-- No :root defaults here.
-- Every var() usage includes a safe fallback.
-*/
-
-/* BODY: only apply themed look if tokens exist; otherwise inherit/transparent */
-body{
-  font-family: var(--font-sans, inherit);
-  background: var(--bg, transparent);
-  color: var(--text, inherit);
-}
-
-/* Header bar */
-.topbar{
-  border-bottom: var(--border-width, 0px) solid var(--divider, transparent);
-  background: var(--topbar-bg, transparent);
-  backdrop-filter: var(--topbar-blur, none);
-  box-shadow: var(--topbar-shadow, none);
-}
-
-/* Controls */
-select{
-  font-size: var(--fs-ui, inherit);
-  line-height: var(--lh-ui, normal);
-  font-weight: var(--fw-ui, inherit);
-  height: var(--control-height, auto);
-  padding: 0 
+/* M-bauhaus */
 
 :root[data-mode="light"]{
-  --accent: #111;
+--accent: #111;
   --badge-bg: transparent;
   --badge-fail-bg: color-mix(in srgb, var(--fail) 20%, var(--badge-fill-bg));
   --badge-fill-bg: color-mix(in srgb, var(--bg) 88%, transparent);
@@ -134,7 +70,7 @@ select{
 }
 
 :root[data-mode="dark"]{
-  --accent: #111;
+--accent: #111;
   --badge-bg: transparent;
   --badge-fail-bg: color-mix(in srgb, var(--fail) 20%, var(--badge-fill-bg));
   --badge-fill-bg: rgba(255,255,255,.08);
@@ -201,7 +137,40 @@ select{
   --topbar-shadow: 0 1px 0 rgba(255,255,255,.10);
   --warn: #f59e0b;
 }
-var(--select-pad-x, 0px);
+
+/* CORE RULES */
+
+/* Spacing rules (theme-owned tokens) */
+.topbar .wrap{
+  padding: var(--header-pad-y, 0px) var(--pad-x, 0px);
+  gap: var(--header-gap, 0px);
+}
+main{
+  padding: var(--pad-y, 0px) var(--pad-x, 0px);
+}
+.grid{ gap: var(--grid-gap, 0px); }
+.stack{ gap: var(--stack-gap, 0px); }
+
+body{
+  font-family: var(--font-sans, inherit);
+  background: var(--bg, transparent);
+  color: var(--text, inherit);
+}
+
+.topbar{
+  border-bottom: var(--border-width, 0px) solid var(--divider, transparent);
+  background: var(--topbar-bg, transparent);
+  backdrop-filter: var(--topbar-blur, none);
+  box-shadow: var(--topbar-shadow, none);
+}
+
+/* Controls */
+select{
+  font-size: var(--fs-ui, inherit);
+  line-height: var(--lh-ui, normal);
+  font-weight: var(--fw-ui, inherit);
+  height: var(--control-height, auto);
+  padding: 0 var(--select-pad-x, 0px);
   border-radius: var(--select-radius, 0px);
   border: var(--border-width, 0px) solid var(--select-border, transparent);
   background: var(--select-bg, transparent);
@@ -214,6 +183,9 @@ select:focus{
   border-color: color-mix(in srgb, var(--accent, transparent) 35%, var(--select-border, transparent));
 }
 
+@media (max-width: 900px){
+  select{ max-width: 56vw; }
+}
 
 /* Mode toggle (radio group) */
 .mode{
@@ -244,11 +216,6 @@ select:focus{
 .mode-item:has(input:checked){
   background: var(--btn-hover-bg, transparent);
   color: var(--text, inherit);
-}
-
-
-@media (max-width: 900px){
-  select{ max-width: 56vw; }
 }
 
 .btn{
@@ -283,7 +250,6 @@ select:focus{
   font-weight: 500;
 }
 
-/* Cards / surfaces */
 .card{
   background: var(--panel, transparent);
   border: var(--border-width, 0px) solid var(--panel-border, transparent);

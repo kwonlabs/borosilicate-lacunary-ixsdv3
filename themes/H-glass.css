@@ -1,89 +1,7 @@
-/* H) Glassmorphism */
-body{
-  background:
-    radial-gradient(circle at 20% 0%, rgba(167,139,250,.42) 0%, rgba(167,139,250,0) 55%),
-    radial-gradient(circle at 80% 20%, rgba(96,165,250,.40) 0%, rgba(96,165,250,0) 55%),
-    radial-gradient(circle at 60% 90%, rgba(52,211,153,.28) 0%, rgba(52,211,153,0) 55%),
-    #0b1020;
-}
-
-/* blur layers + specular highlight */
-.topbar{ backdrop-filter: blur(18px); }
-.card{
-  backdrop-filter: blur(18px);
-  position: relative;
-  overflow: hidden;
-}
-.card::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  background: linear-gradient(135deg, rgba(255,255,255,.22) 0%, rgba(255,255,255,0) 35%);
-}
-select{ backdrop-filter: blur(18px); }
-.btn{ backdrop-filter: blur(18px); }
-
-/* CORE RULES */
-
-/* Spacing rules (theme-owned tokens) */
-.topbar .wrap{
-  padding: var(--header-pad-y, 0px) var(--pad-x, 0px);
-  gap: var(--header-gap, 0px);
-}
-main{
-  padding: var(--pad-y, 0px) var(--pad-x, 0px);
-}
-.grid{ gap: var(--grid-gap, 0px); }
-.stack{ gap: var(--stack-gap, 0px); }
-
-/* Theme system
-
-Goal:
-- Provide ONLY component styling rules.
-- No global defaults that "leak" (font/background/color) unless a theme explicitly sets tokens.
-- If tokens are missing, elements should render close to HTML defaults.
-
-How:
-- No :root defaults here.
-- Every var() usage includes a safe fallback.
-*/
-
-/* BODY: only apply themed look if tokens exist; otherwise inherit/transparent */
-body{
-  font-family: var(--font-sans, inherit);
-  background: var(--bg, transparent);
-  color: var(--text, inherit);
-}
-
-/* Header bar */
-.topbar{
-  border-bottom: var(--border-width, 0px) solid var(--divider, transparent);
-  background: var(--topbar-bg, transparent);
-  backdrop-filter: var(--topbar-blur, none);
-  box-shadow: var(--topbar-shadow, none);
-}
-
-/* Controls */
-select{
-  font-size: var(--fs-ui, inherit);
-  line-height: var(--lh-ui, normal);
-  font-weight: var(--fw-ui, inherit);
-  height: var(--control-height, auto);
-  padding: 0 var(--select-pad-x, 0px);
-  border-radius: var(--select-radius, 0px);
-  border: var(--border-width, 0px) solid var(--select-border, transparent);
-  background: var(--select-bg, transparent);
-  color: var(--text, inherit);
-  outline: none;
-  max-width: min(72vw, 320px);
-}
-select:focus{
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent, transparent) 18%, transparent);
-  border-color: color
+/* H-glass */
 
 :root[data-mode="light"]{
-  --accent: #60a5fa;
+--accent: #60a5fa;
   --badge-bg: transparent;
   --badge-fail-bg: color-mix(in srgb, var(--fail) 20%, var(--badge-fill-bg));
   --badge-fill-bg: rgba(0,0,0,.04);
@@ -152,7 +70,7 @@ select:focus{
 }
 
 :root[data-mode="dark"]{
-  --accent: #60a5fa;
+--accent: #60a5fa;
   --badge-bg: transparent;
   --badge-fail-bg: color-mix(in srgb, var(--fail) 20%, var(--badge-fill-bg));
   --badge-fill-bg: color-mix(in srgb, var(--bg) 88%, transparent);
@@ -219,9 +137,55 @@ select:focus{
   --topbar-shadow: 0 1px 0 var(--divider);
   --warn: #fbbf24;
 }
--mix(in srgb, var(--accent, transparent) 35%, var(--select-border, transparent));
+
+/* CORE RULES */
+
+/* Spacing rules (theme-owned tokens) */
+.topbar .wrap{
+  padding: var(--header-pad-y, 0px) var(--pad-x, 0px);
+  gap: var(--header-gap, 0px);
+}
+main{
+  padding: var(--pad-y, 0px) var(--pad-x, 0px);
+}
+.grid{ gap: var(--grid-gap, 0px); }
+.stack{ gap: var(--stack-gap, 0px); }
+
+body{
+  font-family: var(--font-sans, inherit);
+  background: var(--bg, transparent);
+  color: var(--text, inherit);
 }
 
+.topbar{
+  border-bottom: var(--border-width, 0px) solid var(--divider, transparent);
+  background: var(--topbar-bg, transparent);
+  backdrop-filter: var(--topbar-blur, none);
+  box-shadow: var(--topbar-shadow, none);
+}
+
+/* Controls */
+select{
+  font-size: var(--fs-ui, inherit);
+  line-height: var(--lh-ui, normal);
+  font-weight: var(--fw-ui, inherit);
+  height: var(--control-height, auto);
+  padding: 0 var(--select-pad-x, 0px);
+  border-radius: var(--select-radius, 0px);
+  border: var(--border-width, 0px) solid var(--select-border, transparent);
+  background: var(--select-bg, transparent);
+  color: var(--text, inherit);
+  outline: none;
+  max-width: min(72vw, 320px);
+}
+select:focus{
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent, transparent) 18%, transparent);
+  border-color: color-mix(in srgb, var(--accent, transparent) 35%, var(--select-border, transparent));
+}
+
+@media (max-width: 900px){
+  select{ max-width: 56vw; }
+}
 
 /* Mode toggle (radio group) */
 .mode{
@@ -252,11 +216,6 @@ select:focus{
 .mode-item:has(input:checked){
   background: var(--btn-hover-bg, transparent);
   color: var(--text, inherit);
-}
-
-
-@media (max-width: 900px){
-  select{ max-width: 56vw; }
 }
 
 .btn{
@@ -291,7 +250,6 @@ select:focus{
   font-weight: 500;
 }
 
-/* Cards / surfaces */
 .card{
   background: var(--panel, transparent);
   border: var(--border-width, 0px) solid var(--panel-border, transparent);

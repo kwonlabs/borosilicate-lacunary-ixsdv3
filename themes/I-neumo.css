@@ -1,68 +1,7 @@
-/* I) Neumorphism */
-.btn:hover{ box-shadow: inset 8px 8px 18px rgba(0,0,0,.12), inset -8px -8px 18px rgba(255,255,255,.85); }
-.divider{ height: 0 !important; margin: 0 !important; }
-.line{ border-top: 0 !important; }
-.badge{ box-shadow: 6px 6px 14px rgba(0,0,0,.10), -6px -6px 14px rgba(255,255,255,.85); background: var(--bg); }
-
-/* CORE RULES */
-
-/* Spacing rules (theme-owned tokens) */
-.topbar .wrap{
-  padding: var(--header-pad-y, 0px) var(--pad-x, 0px);
-  gap: var(--header-gap, 0px);
-}
-main{
-  padding: var(--pad-y, 0px) var(--pad-x, 0px);
-}
-.grid{ gap: var(--grid-gap, 0px); }
-.stack{ gap: var(--stack-gap, 0px); }
-
-/* Theme system
-
-Goal:
-- Provide ONLY component styling rules.
-- No global defaults that "leak" (font/background/color) unless a theme explicitly sets tokens.
-- If tokens are missing, elements should render close to HTML defaults.
-
-How:
-- No :root defaults here.
-- Every var() usage includes a safe fallback.
-*/
-
-/* BODY: only apply themed look if tokens exist; otherwise inherit/transparent */
-body{
-  font-family: var(--font-sans, inherit);
-  background: var(--bg, transparent);
-  color: var(--text, inherit);
-}
-
-/* Header bar */
-.topbar{
-  border-bottom: var(--border-width, 0px) solid var(--divider, transparent);
-  background: var(--topbar-bg, transparent);
-  backdrop-filter: var(--topbar-blur, none);
-  box-shadow: var(--topbar-shadow, none);
-}
-
-/* Controls */
-select{
-  font-size: var(--fs-ui, inherit);
-  line-height: var(--lh-ui, normal);
-  font-weight: var(--fw-ui, inherit);
-  height: var(--control-height, auto);
-  padding: 0 var(--select-pad-x, 0px);
-  border-radius: var(--select-radius, 0px);
-  border: var(--border-width, 0px) solid var(--select-border, transparent);
-  background: var(--select-bg, transparent);
-  color: var(--text, inherit);
-  outline: none;
-  max-width: min(72vw, 320px);
-}
-select:focus{
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent, transparent) 18%, trans
+/* I-neumo */
 
 :root[data-mode="light"]{
-  --accent: #1f2937;
+--accent: #1f2937;
   --badge-bg: transparent;
   --badge-fail-bg: color-mix(in srgb, var(--fail) 20%, var(--badge-fill-bg));
   --badge-fill-bg: color-mix(in srgb, var(--bg) 88%, transparent);
@@ -131,7 +70,7 @@ select:focus{
 }
 
 :root[data-mode="dark"]{
-  --accent: #1f2937;
+--accent: #1f2937;
   --badge-bg: transparent;
   --badge-fail-bg: color-mix(in srgb, var(--fail) 20%, var(--badge-fill-bg));
   --badge-fill-bg: rgba(255,255,255,.08);
@@ -198,10 +137,55 @@ select:focus{
   --topbar-shadow: 0 1px 0 rgba(255,255,255,.10);
   --warn: #1f2937;
 }
-parent);
+
+/* CORE RULES */
+
+/* Spacing rules (theme-owned tokens) */
+.topbar .wrap{
+  padding: var(--header-pad-y, 0px) var(--pad-x, 0px);
+  gap: var(--header-gap, 0px);
+}
+main{
+  padding: var(--pad-y, 0px) var(--pad-x, 0px);
+}
+.grid{ gap: var(--grid-gap, 0px); }
+.stack{ gap: var(--stack-gap, 0px); }
+
+body{
+  font-family: var(--font-sans, inherit);
+  background: var(--bg, transparent);
+  color: var(--text, inherit);
+}
+
+.topbar{
+  border-bottom: var(--border-width, 0px) solid var(--divider, transparent);
+  background: var(--topbar-bg, transparent);
+  backdrop-filter: var(--topbar-blur, none);
+  box-shadow: var(--topbar-shadow, none);
+}
+
+/* Controls */
+select{
+  font-size: var(--fs-ui, inherit);
+  line-height: var(--lh-ui, normal);
+  font-weight: var(--fw-ui, inherit);
+  height: var(--control-height, auto);
+  padding: 0 var(--select-pad-x, 0px);
+  border-radius: var(--select-radius, 0px);
+  border: var(--border-width, 0px) solid var(--select-border, transparent);
+  background: var(--select-bg, transparent);
+  color: var(--text, inherit);
+  outline: none;
+  max-width: min(72vw, 320px);
+}
+select:focus{
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent, transparent) 18%, transparent);
   border-color: color-mix(in srgb, var(--accent, transparent) 35%, var(--select-border, transparent));
 }
 
+@media (max-width: 900px){
+  select{ max-width: 56vw; }
+}
 
 /* Mode toggle (radio group) */
 .mode{
@@ -232,11 +216,6 @@ parent);
 .mode-item:has(input:checked){
   background: var(--btn-hover-bg, transparent);
   color: var(--text, inherit);
-}
-
-
-@media (max-width: 900px){
-  select{ max-width: 56vw; }
 }
 
 .btn{
@@ -271,7 +250,6 @@ parent);
   font-weight: 500;
 }
 
-/* Cards / surfaces */
 .card{
   background: var(--panel, transparent);
   border: var(--border-width, 0px) solid var(--panel-border, transparent);
