@@ -24,6 +24,10 @@
     .iconbtn:hover{background:#f5f5f5}
     main{max-width:1100px;margin:0 auto;padding:26px 22px}
     .grid{display:grid;grid-template-columns: 1fr 360px;gap:28px}
+    @media (max-width: 900px){
+      .grid{grid-template-columns: 1fr}
+      .side .card{position:static}
+    }
     .card{border:0;border-radius:0;padding:0;background:transparent}
     .divider{height:1px;background:var(--hair);margin:22px 0}
     h1{margin:0;font-size:16px}
