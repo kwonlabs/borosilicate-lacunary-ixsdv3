@@ -56,6 +56,8 @@
         <option value="H">H) Glassmorphism</option>
         <option value="I">I) Neumorphism</option>
         <option value="J">J) Neo-brutal</option>
+        <option value="K">K) Cyberpunk</option>
+        <option value="L">L) Ecopunk</option>
       </select>
     </label>
 
@@ -69,7 +71,7 @@
     <script>
       document.getElementById('variant')?.addEventListener('change', (e) => {
         const v = e.target.value;
-                const map = {
+                        const map = {
           A: './dashboard-A-ops-console.html',
           B: './dashboard-B-calm-productivity.html',
           C: './dashboard-C-git-native.html',
@@ -80,6 +82,8 @@
           H: './dashboard-H-glass.html',
           I: './dashboard-I-neumo.html',
           J: './dashboard-J-neobrutal.html',
+          K: './dashboard-K-cyberpunk.html',
+          L: './dashboard-L-ecopunk.html',
         };
         window.location.href = map[v] || map.C;
       });

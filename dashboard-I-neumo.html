@@ -44,17 +44,19 @@
     <div class="wrap">
       <div class="neu" style="padding:0 4px">
         <select id="variant" aria-label="Select variant">
-          <option value="A">A) Ops Console</option>
-          <option value="B">B) Calm Productivity</option>
-          <option value="C">C) Git-native</option>
-          <option value="D">D) Minimal Monotone</option>
-          <option value="E">E) Bootstrap</option>
-          <option value="F">F) shadcn</option>
-          <option value="G">G) Skeuomorphism</option>
-          <option value="H">H) Glassmorphism</option>
-          <option value="I" selected>I) Neumorphism</option>
-          <option value="J">J) Neo-brutal</option>
-        </select>
+        <option value="A">A) Ops Console</option>
+        <option value="B">B) Calm Productivity</option>
+        <option value="C">C) Git-native</option>
+        <option value="D">D) Minimal Monotone</option>
+        <option value="E">E) Bootstrap</option>
+        <option value="F">F) shadcn</option>
+        <option value="G">G) Skeuomorphism</option>
+        <option value="H">H) Glassmorphism</option>
+        <option value="I" selected>I) Neumorphism</option>
+        <option value="J">J) Neo-brutal</option>
+        <option value="K">K) Cyberpunk</option>
+        <option value="L">L) Ecopunk</option>
+      </select>
       </div>
       <div class="spacer"></div>
       <a class="btn neu" href="#">Board</a>
@@ -94,7 +96,7 @@
     <script>
       document.getElementById('variant')?.addEventListener('change', (e) => {
         const v = e.target.value;
-        const map = {
+                const map = {
           A: './dashboard-A-ops-console.html',
           B: './dashboard-B-calm-productivity.html',
           C: './dashboard-C-git-native.html',
@@ -105,6 +107,8 @@
           H: './dashboard-H-glass.html',
           I: './dashboard-I-neumo.html',
           J: './dashboard-J-neobrutal.html',
+          K: './dashboard-K-cyberpunk.html',
+          L: './dashboard-L-ecopunk.html',
         };
         window.location.href = map[v] || map.I;
       });
