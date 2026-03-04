@@ -1,0 +1,33 @@
+/* Layout only: structure + minimal reset. No visual design defaults. */
+
+*{ box-sizing:border-box; }
+body{ margin:0; }
+
+.topbar{ position: sticky; top: 0; z-index: 10; }
+.topbar .wrap{
+  max-width: var(--max, 1100px);
+  margin: 0 auto;
+  padding: var(--header-pad-y, 14px) var(--pad-x, 16px);
+  display:flex;
+  align-items:center;
+  gap: var(--header-gap, 10px);
+}
+.spacer{ flex:1; }
+
+main{
+  max-width: var(--max, 1100px);
+  margin: 0 auto;
+  padding: var(--pad-y, 18px) var(--pad-x, 16px);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns: 1fr 360px;
+  gap: var(--grid-gap, 18px);
+}
+
+.stack{ display:grid; gap: var(--stack-gap, 18px); }
+
+@media (max-width: 900px){
+  .grid{ grid-template-columns: 1fr; }
+}

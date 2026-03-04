@@ -1,0 +1,225 @@
+/* Theme system: component rules + neutral defaults.
+   Visual styling lives here (not in layout.css). Theme files override tokens.
+*/
+
+:root{
+  /* colors */
+  --bg:#ffffff;
+  --text:#111111;
+  --muted:#6b6b6b;
+  --accent:#111111;
+
+  /* status */
+  --ok:#16a34a;
+  --warn:#d97706;
+  --fail:#dc2626;
+
+  /* borders */
+  --border-width: 1px;
+  --hair:#efefef;
+  --border: var(--hair);
+  --divider: var(--hair);
+
+  /* radii */
+  --radius: 12px;
+  --radius-sm: 10px;
+  --radius-pill: 999px;
+
+  /* typography */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --fs-title: 16px;
+  --fs-sub: 12px;
+  --fs-k: 11px;
+  --fs-v: 16px;
+  --fs-ui: 13px;
+  --lh-title: 1.2;
+  --lh-sub: 1.55;
+  --lh-ui: 1.2;
+  --fw-title: 800;
+  --fw-ui: 600;
+  --ls-title: .2px;
+
+  /* spacing */
+  --space-1: 6px;
+  --space-2: 10px;
+  --space-3: 14px;
+  --space-4: 18px;
+
+  /* surfaces */
+  --panel: transparent;
+  --panel-border: transparent;
+  --shadow: none;
+
+  /* controls */
+  --control-height: 34px;
+  --control-height-sm: 28px;
+  --select-bg: color-mix(in srgb, var(--bg) 92%, transparent);
+  --select-border: var(--border);
+  --select-radius: var(--radius-sm);
+  --select-pad-x: 10px;
+  --btn-bg: transparent;
+  --btn-border: transparent;
+  --btn-hover-bg: rgba(0,0,0,.04);
+  --btn-pad-x: 10px;
+  --btn-pad-x-sm: 8px;
+
+  /* CTA */
+  --cta-bg: color-mix(in srgb, var(--accent) 14%, transparent);
+  --cta-border: color-mix(in srgb, var(--accent) 45%, var(--btn-border));
+  --cta-text: var(--text);
+  --cta-hover-bg: color-mix(in srgb, var(--accent) 20%, transparent);
+
+  /* filled badges */
+  --badge-fill-bg: color-mix(in srgb, var(--bg) 88%, transparent);
+  --badge-fill-text: var(--text);
+  --badge-ok-bg: color-mix(in srgb, var(--ok) 20%, var(--badge-fill-bg));
+  --badge-warn-bg: color-mix(in srgb, var(--warn) 20%, var(--badge-fill-bg));
+  --badge-fail-bg: color-mix(in srgb, var(--fail) 20%, var(--badge-fill-bg));
+
+  /* layout tokens for layout.css */
+  --max: 1100px;
+  --pad-x: 16px;
+  --pad-y: 18px;
+  --header-pad-y: 14px;
+  --header-gap: 10px;
+  --grid-gap: 18px;
+  --stack-gap: 18px;
+}
+
+body{
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+}
+
+.topbar{
+  border-bottom: var(--border-width) solid var(--divider);
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: blur(10px);
+}
+
+select{
+  font-size: var(--fs-ui);
+  line-height: var(--lh-ui);
+  font-weight: var(--fw-ui);
+  height: var(--control-height);
+  padding: 0 var(--select-pad-x);
+  border-radius: var(--select-radius);
+  border: var(--border-width) solid var(--select-border);
+  background: var(--select-bg);
+  color: var(--text);
+  outline: none;
+  max-width: min(72vw, 320px);
+}
+select:focus{
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 18%, transparent);
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--select-border));
+}
+
+@media (max-width: 900px){
+  select{ max-width: 56vw; }
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  height: var(--control-height);
+  padding: 0 var(--btn-pad-x);
+  border-radius: var(--radius-sm);
+  border: var(--border-width) solid var(--btn-border);
+  background: var(--btn-bg);
+  color: var(--text);
+  text-decoration:none;
+  font-size: var(--fs-ui);
+  line-height: var(--lh-ui);
+  font-weight: var(--fw-ui);
+  white-space: nowrap;
+}
+.btn:hover{ background: var(--btn-hover-bg); }
+
+.btn.cta{
+  background: var(--cta-bg);
+  border-color: var(--cta-border);
+  color: var(--cta-text);
+}
+.btn.cta:hover{ background: var(--cta-hover-bg); }
+
+.btn.sm{
+  height: var(--control-height-sm);
+  padding: 0 var(--btn-pad-x-sm);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.card{
+  background: var(--panel);
+  border: var(--border-width) solid var(--panel-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--space-3);
+}
+
+.h{ display:flex; align-items:flex-start; justify-content:space-between; gap: var(--space-2); }
+
+.title{
+  margin:0;
+  font-size: var(--fs-title);
+  line-height: var(--lh-title);
+  font-weight: var(--fw-title);
+  letter-spacing: var(--ls-title);
+}
+
+.sub{
+  margin:0;
+  margin-top: var(--space-1);
+  color: var(--muted);
+  font-size: var(--fs-sub);
+  line-height: var(--lh-sub);
+  letter-spacing: .1px;
+}
+
+.baseline{ margin: 0 0 var(--space-2); font-size: 14px; line-height: 1.6; }
+
+.kpis{ display:flex; gap: var(--space-4); flex-wrap:wrap; margin-top: var(--space-3); font-family: var(--font-mono); }
+.kpi{ min-width: 160px; }
+.k{ font-size: var(--fs-k); color: var(--muted); margin-bottom: var(--space-1); }
+.v{ font-size: var(--fs-v); }
+
+.divider{ height: var(--border-width); background: var(--divider); margin: var(--space-3) 0; }
+
+.line{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: var(--space-2);
+  padding: var(--space-2) 0;
+  border-top: var(--border-width) solid var(--divider);
+}
+.line:first-child{ border-top: 0; }
+
+.badges{ display:flex; gap: var(--space-2); flex-wrap:wrap; }
+
+.badge{
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  border: var(--border-width) solid var(--border);
+  color: var(--muted);
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+}
+.badge.ok{ border-color: color-mix(in srgb, var(--ok) 40%, var(--border)); color: var(--text); }
+.badge.warn{ border-color: color-mix(in srgb, var(--warn) 40%, var(--border)); color: var(--text); }
+.badge.fail{ border-color: color-mix(in srgb, var(--fail) 40%, var(--border)); color: var(--text); }
+.badge.filled{ border-color: transparent; background: var(--badge-fill-bg); color: var(--badge-fill-text); }
+.badge.filled.ok{ background: var(--badge-ok-bg); }
+.badge.filled.warn{ background: var(--badge-warn-bg); }
+.badge.filled.fail{ background: var(--badge-fail-bg); }
+
+.event-code{ font-family: var(--font-mono); font-size: 12px; line-height: 1.5; color: var(--text); opacity: .92; }
+.event-code .muted{ color: var(--muted); opacity: 1; }
+
+.app-footer{ border-top: var(--border-width) solid var(--divider); background: color-mix(in srgb, var(--bg) 96%, transparent); }
+.footer-wrap{ max-width: var(--max); margin: 0 auto; padding: var(--space-3) var(--pad-x); }
