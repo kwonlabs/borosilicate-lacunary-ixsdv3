@@ -1,0 +1,20 @@
+/* A) Ops Console */
+:root{
+  --bg:#0b0f14;
+  --text:#e5e7eb;
+  --muted:#94a3b8;
+  --hair:#243244;
+
+  --panel: rgba(17,24,39,.72);
+  --panel-border:#243244;
+  --shadow: 0 18px 60px rgba(0,0,0,.35);
+
+  --btn-bg: rgba(17,24,39,.55);
+  --btn-border:#243244;
+  --btn-hover-bg: rgba(99,102,241,.14);
+
+  --accent:#6366f1;
+  --ok:#22c55e;
+  --warn:#f59e0b;
+  --fail:#ef4444;
+}

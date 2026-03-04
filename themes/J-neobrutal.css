@@ -1,0 +1,27 @@
+/* J) Neo-brutal */
+:root{
+  --bg:#fff7ed;
+  --text:#111;
+  --muted:#333;
+  --hair:#111;
+
+  --panel:#ffffff;
+  --panel-border:#111;
+  --shadow: 6px 6px 0 #111;
+
+  --btn-bg:#fff;
+  --btn-border:#111;
+  --btn-hover-bg:#fff;
+
+  --accent:#111;
+  --ok:#111;
+  --warn:#111;
+  --fail:#111;
+
+  --radius: 0px;
+  --radius-sm: 0px;
+}
+
+.topbar{ border-bottom: 3px solid #111; }
+select, .btn{ border-width: 3px; box-shadow: 4px 4px 0 #111; }
+.card{ border-width: 3px; }

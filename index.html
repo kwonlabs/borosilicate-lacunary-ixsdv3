@@ -1,44 +1,24 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="Cache-Control" content="no-store, max-age=0" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-  <title>Design Mocks</title>
-  <style>
-    :root{--bg:#fff;--text:#111;--muted:#666;--hair:#efefef;--sans:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
-    *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans)}
-    header{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter: blur(10px);border-bottom:1px solid var(--hair)}
-    .wrap{max-width:1100px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;gap:10px}
-    .spacer{flex:1}
-    select{font-size:13px;padding:8px 10px;border:1px solid var(--hair);border-radius:999px;background:#fff}
-    a{color:inherit}
-    main{max-width:1100px;margin:0 auto;padding:16px}
-    .grid{display:grid;grid-template-columns: 280px 1fr;gap:16px;align-items:start}
-    @media(max-width:900px){.grid{grid-template-columns:1fr}}
-    .panel{border:1px solid var(--hair);border-radius:14px;padding:12px}
-    .title{font-weight:700;font-size:13px;margin:0 0 10px}
-    .list{display:grid;gap:8px}
-    .item{display:flex;justify-content:space-between;gap:10px;padding:10px;border:1px solid var(--hair);border-radius:12px;text-decoration:none}
-    .item small{color:var(--muted)}
-    .viewer{border:1px solid var(--hair);border-radius:14px;overflow:hidden}
-    .viewerTop{padding:10px 12px;border-bottom:1px solid var(--hair);display:flex;justify-content:space-between;gap:10px;align-items:center}
-    .viewerTop .meta{color:var(--muted);font-size:12px}
-    iframe{display:block;width:100%;height:78vh;border:0;background:#fff}
-    @media(max-width:900px){iframe{height:72vh}}
-  </style>
+  <title>Dashboard — Theme Switcher</title>
+
+  <link rel="stylesheet" href="./themes/base.css" />
+  <link id="theme" rel="stylesheet" href="./themes/D-minimal.css" />
 </head>
 <body>
-  <header>
+  <header class="topbar">
     <div class="wrap">
-      <select id="variant" aria-label="Select variant">
+      <select id="variant" aria-label="Select theme">
         <option value="A">A) Ops Console</option>
         <option value="B">B) Calm Productivity</option>
         <option value="C">C) Git-native</option>
-        <option value="D">D) Minimal Monotone</option>
+        <option value="D" selected>D) Minimal Monotone</option>
         <option value="E">E) Bootstrap</option>
         <option value="F">F) shadcn</option>
         <option value="G">G) Skeuomorphism</option>
@@ -49,76 +29,89 @@
         <option value="L">L) Ecopunk</option>
       </select>
       <div class="spacer"></div>
-      <a id="open" href="./dashboard-A-ops-console.html">Open</a>
+      <a class="btn" href="#">Board</a>
+      <a class="btn" href="#">Sync</a>
+      <a class="btn" href="#">Run</a>
     </div>
   </header>
 
   <main>
     <div class="grid">
-      <aside class="panel">
-        <p class="title">Pages</p>
-        <div class="list" id="links"></div>
-      </aside>
-
-      <section class="viewer">
-        <div class="viewerTop">
-          <div>
-            <div class="title" id="viewerTitle" style="margin:0">A) Ops Console</div>
-            <div class="meta" id="viewerPath">dashboard-A-ops-console.html</div>
+      <section style="display:grid;gap:18px">
+        <div class="card">
+          <div class="h">
+            <div>
+              <div class="title">Dashboard</div>
+              <div class="sub">Single HTML. CSS-only theme switching.</div>
+            </div>
+            <span class="badge">workers + d1</span>
           </div>
-          <div class="meta">iframe preview</div>
+
+          <div class="kpis">
+            <div class="kpi"><div class="k">last_ok</div><div class="v">05:20</div></div>
+            <div class="kpi"><div class="k">fails_24h</div><div class="v">2</div></div>
+            <div class="kpi"><div class="k">pending</div><div class="v">4</div></div>
+          </div>
+
+          <div class="divider" aria-hidden="true"></div>
+
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <span class="badge ok">ok</span>
+            <span class="badge warn">warn</span>
+            <span class="badge fail">fail</span>
+          </div>
         </div>
-        <iframe id="frame" src="./dashboard-A-ops-console.html"></iframe>
+
+        <div class="card">
+          <div class="h"><div class="title">Events</div><div class="sub" style="margin:0">webhook + polling</div></div>
+          <div class="line"><div><span class="badge ok">ok</span> github.webhook issue.edit syn-101</div><div class="sub" style="margin:0">View</div></div>
+          <div class="line"><div><span class="badge fail">fail</span> linear.webhook issue.edit syn-130</div><div class="sub" style="margin:0">Retry</div></div>
+        </div>
       </section>
+
+      <aside style="display:grid;gap:18px">
+        <div class="card">
+          <div class="h"><div class="title">Setup</div></div>
+          <div class="sub" style="line-height:1.7">
+            github_app: installed<br/>
+            linked_repo: kwonlabs/synapse<br/>
+            linear: api_key + webhook
+          </div>
+        </div>
+      </aside>
     </div>
 
     <script>
-      const map = {
-        A: { title: 'A) Ops Console', file: './dashboard-A-ops-console.html' },
-        B: { title: 'B) Calm Productivity', file: './dashboard-B-calm-productivity.html' },
-        C: { title: 'C) Git-native', file: './dashboard-C-git-native.html' },
-        D: { title: 'D) Minimal Monotone', file: './dashboard-D-minimal-monotone.html' },
-        E: { title: 'E) Bootstrap', file: './dashboard-E-bootstrap.html' },
-        F: { title: 'F) shadcn', file: './dashboard-F-shadcn.html' },
-        G: { title: 'G) Skeuomorphism', file: './dashboard-G-skeuo.html' },
-        H: { title: 'H) Glassmorphism', file: './dashboard-H-glass.html' },
-        I: { title: 'I) Neumorphism', file: './dashboard-I-neumo.html' },
-        J: { title: 'J) Neo-brutal', file: './dashboard-J-neobrutal.html' },
-        K: { title: 'K) Cyberpunk', file: './dashboard-K-cyberpunk.html' },
-        L: { title: 'L) Ecopunk', file: './dashboard-L-ecopunk.html' },
+      const themeMap = {
+        A: './themes/A-ops.css',
+        B: './themes/B-calm.css',
+        C: './themes/C-git.css',
+        D: './themes/D-minimal.css',
+        E: './themes/E-bootstrap.css',
+        F: './themes/F-shadcn.css',
+        G: './themes/G-skeuo.css',
+        H: './themes/H-glass.css',
+        I: './themes/I-neumo.css',
+        J: './themes/J-neobrutal.css',
+        K: './themes/K-cyberpunk.css',
+        L: './themes/L-ecopunk.css',
       };
 
       const sel = document.getElementById('variant');
-      const frame = document.getElementById('frame');
-      const open = document.getElementById('open');
-      const viewerTitle = document.getElementById('viewerTitle');
-      const viewerPath = document.getElementById('viewerPath');
-      const links = document.getElementById('links');
+      const link = document.getElementById('theme');
 
-      function setVariant(v){
-        const info = map[v] || map.A;
+      function setTheme(v){
+        const href = themeMap[v] || themeMap.D;
+        link.setAttribute('href', href);
         sel.value = v;
-        frame.src = info.file;
-        open.href = info.file;
-        viewerTitle.textContent = info.title;
-        viewerPath.textContent = info.file.replace('./','');
         const url = new URL(window.location.href);
-        url.searchParams.set('v', v);
+        url.searchParams.set('t', v);
         history.replaceState({}, '', url);
       }
 
-      sel.addEventListener('change', () => setVariant(sel.value));
+      sel.addEventListener('change', () => setTheme(sel.value));
 
-      Object.entries(map).forEach(([k, info]) => {
-        const a = document.createElement('a');
-        a.className = 'item';
-        a.href = '#';
-        a.innerHTML = `<div><div><strong>${info.title}</strong></div><small>${info.file.replace('./','')}</small></div><small>view →</small>`;
-        a.addEventListener('click', (e) => { e.preventDefault(); setVariant(k); });
-        links.appendChild(a);
-      });
-
-      setVariant(new URL(window.location.href).searchParams.get('v') || 'A');
+      setTheme(new URL(window.location.href).searchParams.get('t') || 'D');
     </script>
   </main>
 </body>

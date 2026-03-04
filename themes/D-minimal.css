@@ -1,0 +1,20 @@
+/* D) Minimal Monotone (emoji-free) */
+:root{
+  --bg:#ffffff;
+  --text:#111111;
+  --muted:#6b6b6b;
+  --hair:#efefef;
+
+  --panel: transparent;
+  --panel-border: transparent;
+  --shadow: none;
+
+  --btn-bg: transparent;
+  --btn-border: transparent;
+  --btn-hover-bg: rgba(0,0,0,.04);
+
+  --accent:#111111;
+  --ok:#111111;
+  --warn:#111111;
+  --fail:#111111;
+}

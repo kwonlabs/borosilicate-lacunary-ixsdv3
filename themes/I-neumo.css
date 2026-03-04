@@ -1,0 +1,24 @@
+/* I) Neumorphism */
+:root{
+  --bg:#e9edf2;
+  --text:#1f2937;
+  --muted:#6b7280;
+  --hair: transparent;
+
+  --panel:#e9edf2;
+  --panel-border: transparent;
+  --shadow: 10px 10px 22px rgba(0,0,0,.12), -10px -10px 22px rgba(255,255,255,.85);
+
+  --btn-bg:#e9edf2;
+  --btn-border: transparent;
+  --btn-hover-bg:#e9edf2;
+
+  --accent:#1f2937;
+  --ok:#1f2937;
+  --warn:#1f2937;
+  --fail:#1f2937;
+}
+
+.card, .btn, select{
+  border-radius: 18px;
+}

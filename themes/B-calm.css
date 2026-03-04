@@ -1,0 +1,20 @@
+/* B) Calm Productivity */
+:root{
+  --bg:#f7f7f8;
+  --text:#111827;
+  --muted:#6b7280;
+  --hair:#e5e7eb;
+
+  --panel:#ffffff;
+  --panel-border:#e5e7eb;
+  --shadow: 0 10px 30px rgba(0,0,0,.06);
+
+  --btn-bg:#ffffff;
+  --btn-border:#e5e7eb;
+  --btn-hover-bg: rgba(37,99,235,.08);
+
+  --accent:#2563eb;
+  --ok:#16a34a;
+  --warn:#d97706;
+  --fail:#dc2626;
+}

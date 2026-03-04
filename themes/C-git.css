@@ -1,0 +1,22 @@
+/* C) Git-native */
+:root{
+  --bg:#0d1117;
+  --text:#c9d1d9;
+  --muted:#8b949e;
+  --hair:#30363d;
+
+  --panel:#161b22;
+  --panel-border:#30363d;
+  --shadow: none;
+
+  --btn-bg:#161b22;
+  --btn-border:#30363d;
+  --btn-hover-bg: rgba(88,166,255,.12);
+
+  --accent:#58a6ff;
+  --ok:#3fb950;
+  --warn:#d29922;
+  --fail:#f85149;
+
+  --sans: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}

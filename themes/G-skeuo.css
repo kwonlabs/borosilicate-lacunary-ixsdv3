@@ -1,0 +1,20 @@
+/* G) Skeuomorphism (paper/tactile) */
+:root{
+  --bg:#e7e1d7;
+  --text:#2a2521;
+  --muted:#6a5f55;
+  --hair: rgba(0,0,0,.16);
+
+  --panel:#f6f0e6;
+  --panel-border: rgba(0,0,0,.14);
+  --shadow: 0 14px 30px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.9);
+
+  --btn-bg: linear-gradient(#fff, #efe7dc);
+  --btn-border: rgba(0,0,0,.22);
+  --btn-hover-bg: rgba(0,0,0,.04);
+
+  --accent:#2a2521;
+  --ok:#2a2521;
+  --warn:#2a2521;
+  --fail:#2a2521;
+}
