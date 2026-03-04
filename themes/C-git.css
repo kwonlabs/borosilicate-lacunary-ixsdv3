@@ -46,4 +46,16 @@
   --btn-hover-bg: rgba(88,166,255,.12);
   --btn-pad-y: 6px;
   --btn-pad-x: 10px;
+
+
+  /* layout & spacing (required) */
+--max: 1100px;
+  --pad-x: 16px;
+  --pad-y: 18px;
+  --header-pad-y: 14px;
+  --header-gap: 10px;
+  --grid-gap: 18px;
+  --stack-gap: 18px;
+  --space-1: 6px;
+  --space-2: 10px;
 }

@@ -38,6 +38,18 @@
   --btn-bg:#e9edf2;
   --btn-border: transparent;
   --btn-hover-bg:#e9edf2;
+
+
+  /* layout & spacing (required) */
+--max: 1100px;
+  --pad-x: 16px;
+  --pad-y: 18px;
+  --header-pad-y: 14px;
+  --header-gap: 10px;
+  --grid-gap: 18px;
+  --stack-gap: 18px;
+  --space-1: 6px;
+  --space-2: 10px;
 }
 
 .btn:hover{ box-shadow: inset 8px 8px 18px rgba(0,0,0,.12), inset -8px -8px 18px rgba(255,255,255,.85); }

@@ -38,6 +38,18 @@
   --btn-bg: rgba(52,211,153,.08);
   --btn-border: rgba(52,211,153,.28);
   --btn-hover-bg: rgba(167,139,250,.12);
+
+
+  /* layout & spacing (required) */
+--max: 1100px;
+  --pad-x: 16px;
+  --pad-y: 18px;
+  --header-pad-y: 14px;
+  --header-gap: 10px;
+  --grid-gap: 18px;
+  --stack-gap: 18px;
+  --space-1: 6px;
+  --space-2: 10px;
 }
 
 body{

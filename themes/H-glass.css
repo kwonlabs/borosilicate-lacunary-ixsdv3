@@ -45,6 +45,18 @@
   --cta-bg: rgba(96,165,250,.22);
   --cta-border: rgba(96,165,250,.40);
   --cta-hover-bg: rgba(96,165,250,.30);
+
+
+  /* layout & spacing (required) */
+--max: 1100px;
+  --pad-x: 16px;
+  --pad-y: 18px;
+  --header-pad-y: 14px;
+  --header-gap: 10px;
+  --grid-gap: 18px;
+  --stack-gap: 18px;
+  --space-1: 6px;
+  --space-2: 10px;
 }
 
 body{

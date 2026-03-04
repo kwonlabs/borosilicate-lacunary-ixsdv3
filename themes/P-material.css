@@ -42,6 +42,18 @@
   --cta-bg: rgba(26,115,232,.18);
   --cta-border: rgba(26,115,232,.42);
   --cta-hover-bg: rgba(26,115,232,.26);
+
+
+  /* layout & spacing (required) */
+--max: 1100px;
+  --pad-x: 16px;
+  --pad-y: 18px;
+  --header-pad-y: 14px;
+  --header-gap: 10px;
+  --grid-gap: 18px;
+  --stack-gap: 18px;
+  --space-1: 6px;
+  --space-2: 10px;
 }
 
 .card{ box-shadow: var(--shadow); }
