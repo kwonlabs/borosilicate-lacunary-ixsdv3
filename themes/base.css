@@ -195,6 +195,15 @@ main{
   color: var(--muted);
   font-size: var(--fs-sub);
   line-height: var(--lh-sub);
+  letter-spacing: .1px;
+}
+
+/* secondary/meta text style (e.g., Events right-side actions) */
+.meta{
+  color: var(--muted);
+  font-size: var(--fs-sub);
+  line-height: var(--lh-sub);
+  font-weight: 500;
 }
 
 .kpis{ display:flex; gap: var(--space-4); flex-wrap:wrap; margin-top: var(--space-3); font-family: var(--font-mono); }
