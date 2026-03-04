@@ -1,47 +1,54 @@
-/* D) Minimal Monotone */
+/* D) Minimal (Linear-like calm minimal) */
 :root{
-  --bg:#ffffff;
-  --text:#111111;
-  --muted:#6b6b6b;
-  --accent:#111111;
+  --bg:#f7f8fa;
+  --text:#0b0f14;
+  --muted:#667085;
+  --accent:#4f6ef7;
 
-  --ok:#111111;
-  --warn:#111111;
-  --fail:#111111;
+  --ok:#4f6ef7;
+  --warn:#4f6ef7;
+  --fail:#e11d48;
 
   --border-width: 1px;
-  --hair:#efefef;
-  --border:#efefef;
-  --divider:#efefef;
+  --hair:#e6e7eb;
+  --border:#e6e7eb;
+  --divider:#e6e7eb;
 
-  --radius: 14px;
-  --radius-sm: 12px;
+  --radius: 12px;
+  --radius-sm: 10px;
   --radius-pill: 999px;
 
   --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-
   --fs-title: 16px;
   --fs-sub: 12px;
   --fs-ui: 13px;
   --fs-v: 16px;
   --lh-title: 1.2;
-  --lh-sub: 1.55;
-  --fw-title: 800;
-  --ls-title: .2px;
+  --lh-sub: 1.6;
+  --fw-title: 750;
+  --fw-ui: 600;
+  --ls-title: .0px;
 
   --space-1: 6px;
   --space-2: 10px;
   --space-3: 16px;
-  --space-4: 28px;
+  --space-4: 24px;
+  --space-5: 32px;
 
-  --panel: transparent;
-  --panel-border: transparent;
-  --shadow: none;
+  --panel:#ffffff;
+  --panel-border:#e6e7eb;
+  --shadow: 0 10px 30px rgba(0,0,0,.05);
 
   --select-bg:#ffffff;
-  --select-border:#efefef;
+  --select-border:#e6e7eb;
 
-  --btn-bg: transparent;
-  --btn-border: transparent;
-  --btn-hover-bg: rgba(0,0,0,.04);
+  --btn-bg:#ffffff;
+  --btn-border:#e6e7eb;
+  --btn-hover-bg: rgba(79,110,247,.08);
+
+  /* CTA should look like Linear primary button */
+  --cta-bg: #4f6ef7;
+  --cta-border: #4f6ef7;
+  --cta-text: #ffffff;
+  --cta-hover-bg: #3f5eea;
 }
