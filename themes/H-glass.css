@@ -30,20 +30,27 @@
   --space-4: 20px;
 
   /* glass surfaces */
-  --panel: rgba(255,255,255,.10);
-  --panel-border: rgba(255,255,255,.22);
-  --shadow: 0 18px 48px rgba(0,0,0,.35);
+  --panel: rgba(255,255,255,.08);
+  --panel-border: rgba(255,255,255,.18);
+  --shadow: 0 18px 60px rgba(0,0,0,.45);
 
   --select-bg: rgba(255,255,255,.10);
-  --select-border: rgba(255,255,255,.22);
+  --select-border: rgba(255,255,255,.18);
   --select-radius: var(--radius-sm);
 
   --btn-bg: rgba(255,255,255,.10);
-  --btn-border: rgba(255,255,255,.22);
+  --btn-border: rgba(255,255,255,.18);
   --btn-hover-bg: rgba(255,255,255,.16);
 
+  /* glass header/footer */
+  --topbar-bg: rgba(255,255,255,.06);
+  --topbar-blur: blur(18px);
+  --topbar-shadow: 0 1px 0 rgba(255,255,255,.14);
+  --footer-bg: rgba(255,255,255,.04);
+
   --cta-bg: rgba(96,165,250,.22);
-  --cta-border: rgba(96,165,250,.40);
+  --cta-border: rgba(96,165,250,.42);
+  --cta-text: #f8fafc;
   --cta-hover-bg: rgba(96,165,250,.30);
 
 
@@ -59,29 +66,29 @@
   --space-2: 10px;
 
   /* REQUIRED TOKENS (auto-added placeholders) */
-  --badge-bg: ;
-  --badge-fail-bg: ;
-  --badge-fill-bg: ;
-  --badge-fill-text: ;
-  --badge-ok-bg: ;
-  --badge-warn-bg: ;
+  --badge-bg:  transparent;
+  --badge-fail-bg:  color-mix(in srgb, var(--fail) 20%, var(--badge-fill-bg));
+  --badge-fill-bg:  color-mix(in srgb, var(--bg) 88%, transparent);
+  --badge-fill-text:  var(--text);
+  --badge-ok-bg:  color-mix(in srgb, var(--ok) 20%, var(--badge-fill-bg));
+  --badge-warn-bg:  color-mix(in srgb, var(--warn) 20%, var(--badge-fill-bg));
   --btn-pad-x:  10px;
   --btn-pad-x-sm:  8px;
   --control-height:  34px;
   --control-height-sm:  28px;
-  --cta-text: ;
+  --cta-text:  var(--text);
   --font-mono:  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  --footer-bg: ;
+  --footer-bg:  color-mix(in srgb, var(--bg) 96%, transparent);
   --fs-k:  11px;
-  --fs-v: ;
-  --fw-ui: ;
-  --lh-sub: ;
-  --lh-title: ;
+  --fs-v:  16px;
+  --fw-ui:  600;
+  --lh-sub:  1.55;
+  --lh-title:  1.2;
   --lh-ui:  1.2;
   --select-pad-x:  10px;
-  --topbar-bg: ;
-  --topbar-blur: ;
-}
+  --topbar-bg:  color-mix(in srgb, var(--bg) 92%, transparent);
+  --topbar-blur:  none;
+  --topbar-shadow: 0 1px 0 var(--divider);}
 
 body{
   background:
@@ -91,11 +98,22 @@ body{
     #0b1020;
 }
 
-/* blur layers */
-.topbar{ backdrop-filter: blur(16px); }
-.card{ backdrop-filter: blur(16px); }
-select{ backdrop-filter: blur(16px); }
-.btn{ backdrop-filter: blur(16px); }
+/* blur layers + specular highlight */
+.topbar{ backdrop-filter: blur(18px); }
+.card{
+  backdrop-filter: blur(18px);
+  position: relative;
+  overflow: hidden;
+}
+.card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background: linear-gradient(135deg, rgba(255,255,255,.22) 0%, rgba(255,255,255,0) 35%);
+}
+select{ backdrop-filter: blur(18px); }
+.btn{ backdrop-filter: blur(18px); }
 
 /* CORE RULES */
 
@@ -134,6 +152,7 @@ body{
   border-bottom: var(--border-width, 0px) solid var(--divider, transparent);
   background: var(--topbar-bg, transparent);
   backdrop-filter: var(--topbar-blur, none);
+  box-shadow: var(--topbar-shadow, none);
 }
 
 /* Controls */

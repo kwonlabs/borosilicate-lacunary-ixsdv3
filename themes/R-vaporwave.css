@@ -57,30 +57,30 @@
   --space-2: 10px;
 
   /* REQUIRED TOKENS (auto-added placeholders) */
-  --badge-bg: ;
-  --badge-fail-bg: ;
-  --badge-fill-bg: ;
-  --badge-fill-text: ;
-  --badge-ok-bg: ;
-  --badge-warn-bg: ;
+  --badge-bg:  transparent;
+  --badge-fail-bg:  color-mix(in srgb, var(--fail) 20%, var(--badge-fill-bg));
+  --badge-fill-bg:  color-mix(in srgb, var(--bg) 88%, transparent);
+  --badge-fill-text:  var(--text);
+  --badge-ok-bg:  color-mix(in srgb, var(--ok) 20%, var(--badge-fill-bg));
+  --badge-warn-bg:  color-mix(in srgb, var(--warn) 20%, var(--badge-fill-bg));
   --btn-pad-x:  10px;
   --btn-pad-x-sm:  8px;
   --control-height:  34px;
   --control-height-sm:  28px;
-  --cta-text: ;
+  --cta-text:  var(--text);
   --font-mono:  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  --footer-bg: ;
+  --footer-bg:  color-mix(in srgb, var(--bg) 96%, transparent);
   --fs-k:  11px;
-  --fs-v: ;
-  --fw-ui: ;
-  --lh-sub: ;
-  --lh-title: ;
+  --fs-v:  16px;
+  --fw-ui:  600;
+  --lh-sub:  1.55;
+  --lh-title:  1.2;
   --lh-ui:  1.2;
   --select-pad-x:  10px;
   --select-radius:  var(--radius-sm);
-  --topbar-bg: ;
-  --topbar-blur: ;
-}
+  --topbar-bg:  color-mix(in srgb, var(--bg) 92%, transparent);
+  --topbar-blur:  none;
+  --topbar-shadow: 0 1px 0 var(--divider);}
 
 body{
   background:
@@ -133,6 +133,7 @@ body{
   border-bottom: var(--border-width, 0px) solid var(--divider, transparent);
   background: var(--topbar-bg, transparent);
   backdrop-filter: var(--topbar-blur, none);
+  box-shadow: var(--topbar-shadow, none);
 }
 
 /* Controls */
