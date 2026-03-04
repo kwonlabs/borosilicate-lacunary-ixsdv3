@@ -12,6 +12,13 @@
   --warn: #d97706;
   --fail: #dc2626;
 
+  /* filled badge colors */
+  --badge-fill-bg: color-mix(in srgb, var(--bg) 88%, transparent);
+  --badge-fill-text: var(--text);
+  --badge-ok-bg: color-mix(in srgb, var(--ok) 20%, var(--badge-fill-bg));
+  --badge-warn-bg: color-mix(in srgb, var(--warn) 20%, var(--badge-fill-bg));
+  --badge-fail-bg: color-mix(in srgb, var(--fail) 20%, var(--badge-fill-bg));
+
   /* borders */
   --border-width: 1px;
   --hair: #efefef;
@@ -198,7 +205,17 @@ main{
   letter-spacing: .1px;
 }
 
-/* secondary/meta text style (e.g., Events right-side actions) */
+/* Event line typography */
+.event-code{
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text);
+  opacity: .92;
+}
+.event-code .muted{ color: var(--muted); opacity: 1; }
+
+/* secondary/meta text style */
 .meta{
   color: var(--muted);
   font-size: var(--fs-sub);
@@ -236,3 +253,9 @@ main{
 .badge.ok{ border-color: color-mix(in srgb, var(--ok) 40%, var(--border)); color: var(--text); }
 .badge.warn{ border-color: color-mix(in srgb, var(--warn) 40%, var(--border)); color: var(--text); }
 .badge.fail{ border-color: color-mix(in srgb, var(--fail) 40%, var(--border)); color: var(--text); }
+
+/* filled badge variant */
+.badge.filled{ border-color: transparent; background: var(--badge-fill-bg); color: var(--badge-fill-text); }
+.badge.filled.ok{ background: var(--badge-ok-bg); }
+.badge.filled.warn{ background: var(--badge-warn-bg); }
+.badge.filled.fail{ background: var(--badge-fail-bg); }
