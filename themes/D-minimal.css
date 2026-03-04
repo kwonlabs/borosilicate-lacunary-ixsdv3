@@ -82,18 +82,30 @@
   --stack-gap: 18px;
 
   /* REQUIRED TOKENS (auto-added placeholders) */
-  --btn-pad-x: ;
-  --btn-pad-x-sm: ;
-  --control-height: ;
-  --control-height-sm: ;
-  --font-mono: ;
-  --fs-k: ;
-  --lh-ui: ;
-  --select-pad-x: ;
-  --select-radius: ;
+  --btn-pad-x:  10px;
+  --btn-pad-x-sm:  8px;
+  --control-height:  34px;
+  --control-height-sm:  28px;
+  --font-mono:  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --fs-k:  11px;
+  --lh-ui:  1.2;
+  --select-pad-x:  10px;
+  --select-radius:  var(--radius-sm);
 }
 
 /* CORE RULES */
+
+/* Spacing rules (theme-owned tokens) */
+.topbar .wrap{
+  padding: var(--header-pad-y, 0px) var(--pad-x, 0px);
+  gap: var(--header-gap, 0px);
+}
+main{
+  padding: var(--pad-y, 0px) var(--pad-x, 0px);
+}
+.grid{ gap: var(--grid-gap, 0px); }
+.stack{ gap: var(--stack-gap, 0px); }
+
 /* Theme system
 
 Goal:

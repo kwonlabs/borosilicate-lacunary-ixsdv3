@@ -58,29 +58,41 @@
   --badge-fill-text: ;
   --badge-ok-bg: ;
   --badge-warn-bg: ;
-  --btn-pad-x: ;
-  --btn-pad-x-sm: ;
-  --control-height: ;
-  --control-height-sm: ;
+  --btn-pad-x:  10px;
+  --btn-pad-x-sm:  8px;
+  --control-height:  34px;
+  --control-height-sm:  28px;
   --cta-bg: ;
   --cta-border: ;
   --cta-hover-bg: ;
   --cta-text: ;
-  --font-mono: ;
+  --font-mono:  ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --footer-bg: ;
-  --fs-k: ;
+  --fs-k:  11px;
   --fs-v: ;
   --fw-ui: ;
   --lh-sub: ;
   --lh-title: ;
-  --lh-ui: ;
-  --select-pad-x: ;
-  --select-radius: ;
+  --lh-ui:  1.2;
+  --select-pad-x:  10px;
+  --select-radius:  var(--radius-sm);
   --topbar-bg: ;
   --topbar-blur: ;
 }
 
 /* CORE RULES */
+
+/* Spacing rules (theme-owned tokens) */
+.topbar .wrap{
+  padding: var(--header-pad-y, 0px) var(--pad-x, 0px);
+  gap: var(--header-gap, 0px);
+}
+main{
+  padding: var(--pad-y, 0px) var(--pad-x, 0px);
+}
+.grid{ gap: var(--grid-gap, 0px); }
+.stack{ gap: var(--stack-gap, 0px); }
+
 /* Theme system
 
 Goal:
